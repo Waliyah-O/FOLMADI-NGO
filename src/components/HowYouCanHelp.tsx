@@ -57,7 +57,7 @@ export default function HowYouCanHelp() {
             <div
               key={option.title}
               style={{
-                backgroundColor: option.featured ? "#e8650a" : "#fff",
+                backgroundColor: option.featured ? "#e07a52 " : "#fff",
                 padding: "32px 28px",
                 display: "flex",
                 flexDirection: "column",
@@ -109,8 +109,8 @@ export default function HowYouCanHelp() {
                 href={option.href}
                 style={{
                   display: "inline-block",
-                  backgroundColor: option.featured ? "#fff" : "#e8650a",
-                  color: option.featured ? "#e8650a" : "#fff",
+                  backgroundColor: option.featured ? "#fff" : "#e07a52 ",
+                  color: option.featured ? "#e07a52 " : "#fff",
                   fontFamily: "var(--font-oswald)",
                   fontWeight: 600,
                   textTransform: "uppercase",

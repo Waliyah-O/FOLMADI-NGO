@@ -8,7 +8,7 @@ const helpItems = [
     href: "/what-we-do/our-work/child-protection",
     image:
       "https://www.folmadi.com.ng/sites/za/files/styles/card_plus_horizontal_desktop_600x400/public/child-protection.jpg",
-    color: "#e8650a",
+    color: "#e07a52 ",
     icon: "🛡️",
   },
   {

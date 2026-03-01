@@ -1,0 +1,200 @@
+.contact {
+  padding: 6rem 0;
+  background: var(--warm-white);
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: 5rem;
+  align-items: start;
+}
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.ci-row {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+.ci-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(192, 97, 58, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+.ci-text strong {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--terracotta);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.2rem;
+}
+.ci-text span {
+  font-size: 0.92rem;
+  color: var(--brown);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.fg {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.fg label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--mid-brown);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.fg input,
+.fg textarea,
+.fg select {
+  padding: 0.85rem 1rem;
+  border: 2px solid #e8ddd0;
+  border-radius: 12px;
+  font-size: 0.92rem;
+  font-family: "Nunito", sans-serif;
+  background: white;
+  color: var(--dark);
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+.fg input:focus,
+.fg textarea:focus,
+.fg select:focus {
+  outline: none;
+  border-color: var(--terracotta);
+  box-shadow: 0 0 0 3px rgba(192, 97, 58, 0.1);
+}
+.fg textarea {
+  resize: vertical;
+  min-height: 130px;
+}
+.form-submit {
+  background: var(--terracotta);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: "Nunito", sans-serif;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    transform 0.2s;
+}
+.form-submit:hover {
+  background: var(--brown);
+  transform: translateY(-1px);
+}
+
+/* ─── FOOTER ─── */
+footer {
+  background: #1e1208;
+  color: rgba(255, 255, 255, 0.6);
+}
+.footer-top {
+  padding: 4rem 0 2.5rem;
+  display: grid;
+  grid-template-columns: 2.5fr 1fr 1fr 1fr;
+  gap: 3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 2rem;
+}
+.f-logo {
+  font-family: "Lora", serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--gold-light);
+  margin-bottom: 0.3rem;
+}
+.f-full {
+  font-size: 0.68rem;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.03em;
+  margin-bottom: 1rem;
+}
+.f-desc {
+  font-size: 0.85rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+.f-socials {
+  display: flex;
+  gap: 0.6rem;
+}
+.f-socials a {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: white;
+  font-size: 0.8rem;
+  transition: background 0.2s;
+}
+.f-socials a:hover {
+  background: var(--terracotta);
+}
+.f-col h4 {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: white;
+  margin-bottom: 1rem;
+}
+.f-col ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+.f-col ul li a {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.f-col ul li a:hover {
+  color: var(--gold-light);
+}
+.footer-bottom {
+  padding: 0 2.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+}
+.footer-bottom a {
+  color: var(--gold-light);
+  text-decoration: none;
+}

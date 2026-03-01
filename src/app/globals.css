@@ -15,6 +15,72 @@
   --color-blue: #008751; /* Nigerian flag green — links & accents */
   --color-yellow: #f5a623; /* Warm amber — highlights & badges */
   --color-green: #005f38; /* Deep forest green — secondary accents */
+  --terracotta: #c0613a;
+  --terracotta-light: #e07a52;
+  --green: #3a7d52;
+  --green-light: #52a86e;
+  --gold: #d4a832;
+  --gold-light: #f0c84a;
+  --warm-cream: #fdf6ee;
+  --warm-white: #fffbf5;
+  --brown: #5c3d2e;
+  --mid-brown: #8b6655;
+  --light-brown: #c4a882;
+  --dark: #2a1f1a;
+}
+
+@layer base {
+  body {
+    @apply font-nunito bg-cream text-bark;
+  }
+}
+
+@layer utilities {
+  .font-lora {
+    font-family: var(--font-lora), Georgia, serif;
+  }
+  .font-nunito {
+    font-family: var(--font-nunito), system-ui, sans-serif;
+  }
+
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #d4a832, #f0c84a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-gradient {
+    background: linear-gradient(160deg, #4a2c1e 0%, #2d4a3a 50%, #3d2918 100%);
+  }
+
+  .section-reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition:
+      opacity 0.65s ease,
+      transform 0.65s ease;
+  }
+
+  .section-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Smooth scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #fdf6ee;
+}
+::-webkit-scrollbar-thumb {
+  background: #c4a882;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8b6655;
 }
 
 * {
@@ -57,10 +123,11 @@ img {
 }
 
 /* Utility classes */
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 2.5rem;
 }
 
 .section-heading {
@@ -137,4 +204,202 @@ img {
 }
 .socialBtn:hover {
   background: #e8650a;
+}
+
+/* ─── WAVE DIVIDER ─── */
+.wave {
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  background: var(--warm-cream);
+}
+.wave svg {
+  display: block;
+}
+
+/* ─── MARQUEE ─── */
+.marquee-bar {
+  background: var(--terracotta);
+  padding: 0.75rem 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.marquee-track {
+  display: inline-block;
+  animation: scroll-left 25s linear infinite;
+}
+@keyframes scroll-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee-track span {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: white;
+  padding: 0 2rem;
+  opacity: 0.9;
+}
+.marquee-track span.dot {
+  color: var(--gold-light);
+  padding: 0 0.5rem;
+  font-size: 0.6rem;
+}
+
+/* ─── SECTION COMMONS ─── */
+.section-label {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  background: rgba(192, 97, 58, 0.1);
+  padding: 0.3rem 0.9rem;
+  border-radius: 100px;
+  margin-bottom: 1rem;
+}
+.section-title {
+  font-family: "Lora", serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  color: var(--brown);
+  line-height: 1.25;
+  margin-bottom: 1rem;
+}
+.section-body {
+  color: var(--mid-brown);
+  line-height: 1.85;
+  font-size: 1.02rem;
+}
+
+/* ─── FOCUS STRIP ─── */
+.focus-strip {
+  background: var(--gold);
+  padding: 2.5rem 0;
+}
+.focus-strip-inner {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.focus-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: var(--dark);
+  letter-spacing: 0.02em;
+}
+.focus-item span.ico {
+  font-size: 1.2rem;
+}
+.focus-sep {
+  color: rgba(0, 0, 0, 0.2);
+  font-size: 1.2rem;
+}
+
+/* ─── SCROLL REVEAL ─── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 960px) {
+  nav {
+    padding: 0.9rem 1.2rem;
+  }
+  .nav-links {
+    gap: 1rem;
+  }
+  .about-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .programs-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .impact-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .testi-grid {
+    grid-template-columns: 1fr;
+  }
+  .gi-grid {
+    grid-template-columns: 1fr;
+  }
+  .donate-tiers {
+    grid-template-columns: 1fr 1fr;
+  }
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 3rem 1.5rem 2rem;
+  }
+  .footer-bottom {
+    padding: 0 1.5rem 2rem;
+    flex-direction: column;
+    text-align: center;
+  }
+  .container {
+    padding: 0 1.5rem;
+  }
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  .about,
+  .impact,
+  .contact,
+  .get-involved {
+    padding: 4rem 0;
+  }
+  .programs {
+    padding: 4rem 0;
+  }
+  .testimonials {
+    padding: 4rem 0;
+  }
+}
+@media (max-width: 600px) {
+  .programs-grid {
+    grid-template-columns: 1fr;
+  }
+  .about-values {
+    grid-template-columns: 1fr;
+  }
+  .about-visual {
+    grid-template-columns: 1fr;
+  }
+  .av-main {
+    grid-row: auto;
+  }
+  .hero-stats {
+    gap: 1.5rem;
+  }
+  .donate-tiers {
+    grid-template-columns: 1fr 1fr;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  .nav-links li:not(:last-child):not(:nth-last-child(2)) {
+    display: none;
+  }
 }

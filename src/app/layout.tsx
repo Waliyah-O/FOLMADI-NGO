@@ -18,23 +18,33 @@ const lato = Lato({
 });
 
 export const metadata: Metadata = {
-  title: "FOLMADI Nigeria | Homepage",
+  title: "FOLMADI — Friends of Like Mind Development Initiative",
   description:
-    "FOLMADI believes every child deserves a future. In Nigeria and around the world, we give children a healthy start in life, the opportunity to learn and protection from harm.",
+    "A community-rooted Nigerian NGO dedicated to early child development, youth empowerment, women's health, civic education, clean water, and more — based in Lagos, Nigeria.",
+  keywords: [
+    "NGO",
+    "Nigeria",
+    "Lagos",
+    "children",
+    "education",
+    "health",
+    "community",
+    "FOLMADI",
+  ],
   openGraph: {
     siteName: "FOLMADI Nigeria",
     type: "website",
-    url: "https://www.folmadi.com.ng/",
-    title: "FOLMADI Nigeria | Homepage",
+    url: "https://folmadi-ngo.vercel.app/",
+    title: "FOLMADI — Friends of Like Mind Development Initiative",
     description:
-      "FOLMADI believes every child deserves a future. In Nigeria and around the world, we give children a healthy start in life, the opportunity to learn and protection from harm.",
+      "Transforming lives across Lagos through community-driven programs.",
   },
   twitter: {
     card: "summary_large_image",
     site: "@SaveChildrenSA",
-    title: "FOLMADI Nigeria | Homepage",
+    title: "FOLMADI — Friends of Like Mind Development Initiative",
     description:
-      "FOLMADI believes every child deserves a future. In Nigeria and around the world, we give children a healthy start in life, the opportunity to learn and protection from harm.",
+      "A community-rooted Nigerian NGO dedicated to early child development, youth empowerment, women's health, civic education, clean water, and more — based in Lagos, Nigeria.",
   },
 };
 

@@ -64,9 +64,10 @@ export default function OurHistoryPage() {
       <PageHero
         title="Our History"
         subtitle="From humble beginnings to a nationwide movement — discover how FOLMADI has grown over the decades to become a leading voice for children's rights in Nigeria."
+        bgColor="#c0613a"
       />
 
-      <section style={{ padding: "60px 0", backgroundColor: "#fff" }}>
+      <section style={{ padding: "60px 0", backgroundColor: "#fdf6ee" }}>
         <div className="container">
           <div style={{ maxWidth: "800px", margin: "0 auto" }}>
             <p
@@ -80,8 +81,8 @@ export default function OurHistoryPage() {
               }}
             >
               FOLMADI Nigeria was born out of a deep conviction that every child
-              in Nigeria deserves a safe, healthy, and fulfilling childhood. Over
-              the past two and a half decades, we have grown from a small
+              in Nigeria deserves a safe, healthy, and fulfilling childhood.
+              Over the past two and a half decades, we have grown from a small
               advocacy group into a nationally recognised organisation with
               programmes spanning child protection, education, health, and
               emergency response.
@@ -125,7 +126,7 @@ export default function OurHistoryPage() {
                         fontFamily: "var(--font-oswald)",
                         fontSize: "1.1rem",
                         fontWeight: 700,
-                        color: "#e2001a",
+                        color: "#c15226",
                       }}
                     >
                       {milestone.year}
@@ -139,8 +140,9 @@ export default function OurHistoryPage() {
                         width: "14px",
                         height: "14px",
                         borderRadius: "50%",
-                        backgroundColor: index === milestones.length - 1 ? "#e2001a" : "#fff",
-                        border: "2px solid #e2001a",
+                        backgroundColor:
+                          index === milestones.length - 1 ? "#c15226" : "#fff",
+                        border: "2px solid #c15226",
                       }}
                     />
                   </div>

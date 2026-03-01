@@ -18,7 +18,7 @@ export default function NewsletterSection() {
       style={{
         padding: "60px 0",
         backgroundColor: "#fff",
-        borderTop: "4px solid #e8650a",
+        borderTop: "4px solid #e07a52 ",
       }}
     >
       <div className="container">
@@ -163,7 +163,7 @@ export default function NewsletterSection() {
                 <button
                   type="submit"
                   style={{
-                    backgroundColor: "#e8650a",
+                    backgroundColor: "#e07a52 ",
                     color: "#fff",
                     fontFamily: "var(--font-oswald)",
                     fontWeight: 600,
