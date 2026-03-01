@@ -189,7 +189,7 @@ export default function Footer() {
                   fontWeight="bold"
                   fontFamily="Arial"
                 >
-                  SC
+                  F
                 </text>
               </svg>
               <div>

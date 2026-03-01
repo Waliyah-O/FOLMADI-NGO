@@ -129,7 +129,7 @@ export default function Header() {
                   fontWeight="bold"
                   fontFamily="Arial"
                 >
-                  SC
+                  F
                 </text>
               </svg>
               <div>
