@@ -179,7 +179,7 @@ export default function Footer() {
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <circle cx="24" cy="24" r="24" fill="#e2001a" />
+                <circle cx="24" cy="24" r="24" fill="#e8650a" />
                 <text
                   x="24"
                   y="30"
@@ -269,7 +269,7 @@ export default function Footer() {
                   }}
                   onMouseEnter={(e) => {
                     (e.currentTarget as HTMLElement).style.backgroundColor =
-                      "#e2001a";
+                      "#e8650a";
                   }}
                   onMouseLeave={(e) => {
                     (e.currentTarget as HTMLElement).style.backgroundColor =
@@ -321,7 +321,7 @@ export default function Footer() {
                         display: "block",
                       }}
                       onMouseEnter={(e) => {
-                        (e.target as HTMLElement).style.color = "#e2001a";
+                        (e.target as HTMLElement).style.color = "#e8650a";
                       }}
                       onMouseLeave={(e) => {
                         (e.target as HTMLElement).style.color = "#aaa";

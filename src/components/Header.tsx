@@ -70,7 +70,7 @@ export default function Header() {
       {/* Top bar */}
       <div
         style={{
-          backgroundColor: "#e2001a",
+          backgroundColor: "#e8650a",
           padding: "6px 0",
           textAlign: "right",
         }}
@@ -119,7 +119,7 @@ export default function Header() {
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <circle cx="24" cy="24" r="24" fill="#e2001a" />
+                <circle cx="24" cy="24" r="24" fill="#e8650a" />
                 <text
                   x="24"
                   y="30"
@@ -138,7 +138,7 @@ export default function Header() {
                     fontFamily: "var(--font-oswald)",
                     fontWeight: 700,
                     fontSize: "1.1rem",
-                    color: "#e2001a",
+                    color: "#e8650a",
                     textTransform: "uppercase",
                     lineHeight: 1.1,
                   }}
@@ -186,7 +186,7 @@ export default function Header() {
                     transition: "color 0.2s",
                     borderBottom:
                       openDropdown === item.label
-                        ? "3px solid #e2001a"
+                        ? "3px solid #e8650a"
                         : "3px solid transparent",
                   }}
                 >
@@ -202,7 +202,7 @@ export default function Header() {
                       boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
                       minWidth: "220px",
                       zIndex: 100,
-                      borderTop: "3px solid #e2001a",
+                      borderTop: "3px solid #e8650a",
                     }}
                   >
                     {item.children.map((child) => (
@@ -222,7 +222,7 @@ export default function Header() {
                         }}
                         onMouseEnter={(e) => {
                           (e.target as HTMLElement).style.backgroundColor =
-                            "#e2001a";
+                            "#e8650a";
                           (e.target as HTMLElement).style.color = "#fff";
                         }}
                         onMouseLeave={(e) => {

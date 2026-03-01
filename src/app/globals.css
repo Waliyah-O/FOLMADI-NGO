@@ -4,7 +4,23 @@
   --font-oswald: "Oswald", sans-serif;
   --font-lato: "Lato", sans-serif;
 
-  /* FOLMADI brand colors */
+  /* FOLMADI brand colors — Warm & African */
+  --color-red: #e8650a; /* Burnt orange — primary CTA color */
+  --color-red-dark: #c4520a; /* Darker burnt orange for hover states */
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-gray-light: #f7f4f0; /* Warm off-white background */
+  --color-gray: #6b6560; /* Warm mid-gray for body text */
+  --color-gray-dark: #2e2a26; /* Warm near-black for headings */
+  --color-blue: #008751; /* Nigerian flag green — links & accents */
+  --color-yellow: #f5a623; /* Warm amber — highlights & badges */
+  --color-green: #005f38; /* Deep forest green — secondary accents */
+}
+/* :root {
+  --font-oswald: "Oswald", sans-serif;
+  --font-lato: "Lato", sans-serif;
+
+  FOLMADI brand colors
   --color-red: #e2001a;
   --color-red-dark: #c0001a;
   --color-white: #ffffff;
@@ -15,7 +31,7 @@
   --color-blue: #0779bf;
   --color-yellow: #ffd100;
   --color-green: #00a651;
-}
+} */
 
 * {
   box-sizing: border-box;
@@ -136,5 +152,5 @@ img {
   transition: background-color 0.2s;
 }
 .socialBtn:hover {
-  background: #e2001a;
+  background: #e8650a;
 }

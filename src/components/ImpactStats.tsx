@@ -3,7 +3,7 @@ const stats = [
     number: "1.2M+",
     label: "Children reached in 2024",
     icon: "👧",
-    color: "#e2001a",
+    color: "#e8650a",
   },
   {
     number: "13",
@@ -29,7 +29,7 @@ export default function ImpactStats() {
   return (
     <section
       style={{
-        backgroundColor: "#e2001a",
+        backgroundColor: "#e8650a",
         padding: "60px 0",
       }}
     >

@@ -27,7 +27,7 @@ export default function ClientSocialLink({
         borderRadius: "50%",
         transition: "background-color 0.2s",
       }}
-      onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#e2001a")}
+      onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#e8650a")}
       onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#333")}
     >
       {children}

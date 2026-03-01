@@ -8,7 +8,7 @@ const helpItems = [
     href: "/what-we-do/our-work/child-protection",
     image:
       "https://www.savethechildren.org.za/sites/za/files/styles/card_plus_horizontal_desktop_600x400/public/child-protection.jpg",
-    color: "#e2001a",
+    color: "#e8650a",
     icon: "🛡️",
   },
   {

@@ -81,7 +81,7 @@ export default function HeroBanner() {
           <Link
             href="/donate"
             style={{
-              backgroundColor: "#e2001a",
+              backgroundColor: "#e8650a",
               color: "#fff",
               fontFamily: "var(--font-oswald)",
               fontWeight: 600,
