@@ -93,3 +93,4 @@ export async function GET() {
 | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Initial    | Template created with base setup                                                                                                                                                                                              |
 | 2026-03-01 | Cloned FOLMADI Nigeria homepage (savethechildren.org.za) — added Header, HeroBanner, HowWeHelpChildren, ImpactStats, HowYouCanHelp, NewsletterSection, Footer components with brand colors (red #e2001a), Oswald + Lato fonts |
+| 2026-03-01 | Built all inner pages — 20 pages across About Us, What We Do, Get Involved, News & Events, and Donate sections. Added shared PageLayout and PageHero components. All pages pass typecheck and lint. |
