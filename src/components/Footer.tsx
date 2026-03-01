@@ -65,7 +65,7 @@ const footerLinks = [
 const socialLinks = [
   {
     name: "Instagram",
-    href: "https://www.instagram.com/savethechildrensouthafrica",
+    href: "https://www.instagram.com/folmadinigeria",
     icon: (
       <svg
         width="24"
@@ -80,7 +80,7 @@ const socialLinks = [
   },
   {
     name: "Facebook",
-    href: "https://www.facebook.com/SavetheChildrenSouthAfrica",
+    href: "https://www.facebook.com/folmadinigeria",
     icon: (
       <svg
         width="24"
@@ -95,7 +95,7 @@ const socialLinks = [
   },
   {
     name: "YouTube",
-    href: "https://www.youtube.com/user/SavetheChildrenSA",
+    href: "https://www.youtube.com/user/folmadiNG",
     icon: (
       <svg
         width="24"

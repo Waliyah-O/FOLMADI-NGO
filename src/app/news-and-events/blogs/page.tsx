@@ -14,7 +14,8 @@ const blogs = [
     tags: ["Nutrition", "Community", "Kano"],
   },
   {
-    title: "Why Early Childhood Education is the Best Investment Nigeria Can Make",
+    title:
+      "Why Early Childhood Education is the Best Investment Nigeria Can Make",
     author: "Ms. Hauwa Musa",
     authorRole: "Head of Education",
     date: "September 5, 2025",
@@ -55,7 +56,7 @@ const blogs = [
   },
   {
     title: "What 25 Years of Working for Children Has Taught Us",
-    author: "Dr. Amina Okafor",
+    author: "Mr Austin Okorowu",
     authorRole: "Country Director",
     date: "May 15, 2025",
     readTime: "10 min read",
@@ -82,7 +83,9 @@ export default function BlogsPage() {
 
       <section style={{ padding: "60px 0", backgroundColor: "#fff" }}>
         <div className="container">
-          <div style={{ display: "flex", flexDirection: "column", gap: "32px" }}>
+          <div
+            style={{ display: "flex", flexDirection: "column", gap: "32px" }}
+          >
             {blogs.map((blog, index) => (
               <article
                 key={blog.title}
@@ -181,7 +184,13 @@ export default function BlogsPage() {
                       gap: "12px",
                     }}
                   >
-                    <div style={{ display: "flex", gap: "16px", alignItems: "center" }}>
+                    <div
+                      style={{
+                        display: "flex",
+                        gap: "16px",
+                        alignItems: "center",
+                      }}
+                    >
                       <div
                         style={{
                           width: "36px",

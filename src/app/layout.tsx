@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   openGraph: {
     siteName: "FOLMADI Nigeria",
     type: "website",
-    url: "https://www.savethechildren.org.za/",
+    url: "https://www.folmadi.com.ng/",
     title: "FOLMADI Nigeria | Homepage",
     description:
       "FOLMADI believes every child deserves a future. In Nigeria and around the world, we give children a healthy start in life, the opportunity to learn and protection from harm.",

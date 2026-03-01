@@ -18,7 +18,7 @@ export default function HeroBanner() {
           position: "absolute",
           inset: 0,
           backgroundImage:
-            "url('https://www.savethechildren.org.za/sites/za/files/styles/banner_desktop_1440x810/public/2026-02/homepage_0.jpg.webp?itok=3OzQ8uqk')",
+            "url('https://www.folmadi.com.ng/sites/za/files/styles/banner_desktop_1440x810/public/2026-02/homepage_0.jpg.webp?itok=3OzQ8uqk')",
           backgroundSize: "cover",
           backgroundPosition: "center top",
           backgroundRepeat: "no-repeat",

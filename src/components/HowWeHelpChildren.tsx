@@ -7,7 +7,7 @@ const helpItems = [
       "Our Goal: To strengthen the capacity of duty bearers through scaling up violence-prevention programmes in 13 districts.",
     href: "/what-we-do/our-work/child-protection",
     image:
-      "https://www.savethechildren.org.za/sites/za/files/styles/card_plus_horizontal_desktop_600x400/public/child-protection.jpg",
+      "https://www.folmadi.com.ng/sites/za/files/styles/card_plus_horizontal_desktop_600x400/public/child-protection.jpg",
     color: "#e8650a",
     icon: "🛡️",
   },
@@ -17,7 +17,7 @@ const helpItems = [
       "Our Goal: To strengthen ECCD quality through building capacity of 1 000 practitioners and 100 000 caregivers and partnering with networks, CSOs and government departments in six provinces.",
     href: "/what-we-do/our-work/education",
     image:
-      "https://www.savethechildren.org.za/sites/za/files/styles/card_plus_horizontal_desktop_600x400/public/education.jpg",
+      "https://www.folmadi.com.ng/sites/za/files/styles/card_plus_horizontal_desktop_600x400/public/education.jpg",
     color: "#ffd100",
     icon: "📚",
   },
@@ -27,7 +27,7 @@ const helpItems = [
       "Our Goal: To support the provision of gender-sensitive comprehensive sexuality education (CSE) to 80 000 children, adolescents and young people (CAYP) in 10 districts.",
     href: "/what-we-do/our-work/health-and-nutrition",
     image:
-      "https://www.savethechildren.org.za/sites/za/files/styles/card_plus_horizontal_desktop_600x400/public/health-nutrition.jpg",
+      "https://www.folmadi.com.ng/sites/za/files/styles/card_plus_horizontal_desktop_600x400/public/health-nutrition.jpg",
     color: "#00a651",
     icon: "❤️",
   },
@@ -37,7 +37,7 @@ const helpItems = [
       "Supporting children's rights is everyone's business and the ultimate definition of sustainability.",
     href: "/what-we-do/our-work/childrens-rights",
     image:
-      "https://www.savethechildren.org.za/sites/za/files/styles/card_plus_horizontal_desktop_600x400/public/childrens-rights.jpg",
+      "https://www.folmadi.com.ng/sites/za/files/styles/card_plus_horizontal_desktop_600x400/public/childrens-rights.jpg",
     color: "#0779bf",
     icon: "⚖️",
   },

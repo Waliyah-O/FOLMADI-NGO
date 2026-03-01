@@ -42,7 +42,7 @@ export default function NewsletterSection() {
               alignItems: "center",
               justifyContent: "center",
               backgroundImage:
-                "url('https://www.savethechildren.org.za/sites/za/files/styles/banner_desktop_1440x810/public/2024-10/newsletter-bg.jpg')",
+                "url('https://www.folmadi.com.ng/sites/za/files/styles/banner_desktop_1440x810/public/2024-10/newsletter-bg.jpg')",
               backgroundSize: "cover",
               backgroundPosition: "center",
               position: "relative",

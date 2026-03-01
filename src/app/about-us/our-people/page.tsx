@@ -3,7 +3,7 @@ import PageHero from "@/components/PageHero";
 
 const leadership = [
   {
-    name: "Dr. Amina Okafor",
+    name: "Mr Austin Okorowu",
     role: "Country Director",
     bio: "Dr. Okafor brings over 20 years of experience in international development and child rights advocacy. She holds a PhD in Development Studies from the University of Lagos.",
     initials: "AO",
