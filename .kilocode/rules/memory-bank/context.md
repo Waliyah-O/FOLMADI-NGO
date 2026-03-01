@@ -85,3 +85,4 @@ export async function GET() {
 | Date | Changes |
 |------|---------|
 | Initial | Template created with base setup |
+| 2026-03-01 | Cloned Save the Children South Africa homepage (savethechildren.org.za) — added Header, HeroBanner, HowWeHelpChildren, ImpactStats, HowYouCanHelp, NewsletterSection, Footer components with brand colors (red #e2001a), Oswald + Lato fonts |
