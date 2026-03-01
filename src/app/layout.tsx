@@ -18,23 +18,23 @@ const lato = Lato({
 });
 
 export const metadata: Metadata = {
-  title: "Save the Children South Africa | Homepage",
+  title: "FOLMADI Nigeria | Homepage",
   description:
-    "Save the Children believes every child deserves a future. In South Africa and around the world, we give children a healthy start in life, the opportunity to learn and protection from harm.",
+    "FOLMADI believes every child deserves a future. In Nigeria and around the world, we give children a healthy start in life, the opportunity to learn and protection from harm.",
   openGraph: {
-    siteName: "Save the Children South Africa",
+    siteName: "FOLMADI Nigeria",
     type: "website",
     url: "https://www.savethechildren.org.za/",
-    title: "Save the Children South Africa | Homepage",
+    title: "FOLMADI Nigeria | Homepage",
     description:
-      "Save the Children believes every child deserves a future. In South Africa and around the world, we give children a healthy start in life, the opportunity to learn and protection from harm.",
+      "FOLMADI believes every child deserves a future. In Nigeria and around the world, we give children a healthy start in life, the opportunity to learn and protection from harm.",
   },
   twitter: {
     card: "summary_large_image",
     site: "@SaveChildrenSA",
-    title: "Save the Children South Africa | Homepage",
+    title: "FOLMADI Nigeria | Homepage",
     description:
-      "Save the Children believes every child deserves a future. In South Africa and around the world, we give children a healthy start in life, the opportunity to learn and protection from harm.",
+      "FOLMADI believes every child deserves a future. In Nigeria and around the world, we give children a healthy start in life, the opportunity to learn and protection from harm.",
   },
 };
 

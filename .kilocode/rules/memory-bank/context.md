@@ -17,12 +17,12 @@ The template is a clean Next.js 16 starter with TypeScript and Tailwind CSS 4. I
 
 ## Current Structure
 
-| File/Directory | Purpose | Status |
-|----------------|---------|--------|
-| `src/app/page.tsx` | Home page | ✅ Ready |
-| `src/app/layout.tsx` | Root layout | ✅ Ready |
-| `src/app/globals.css` | Global styles | ✅ Ready |
-| `.kilocode/` | AI context & recipes | ✅ Ready |
+| File/Directory        | Purpose              | Status   |
+| --------------------- | -------------------- | -------- |
+| `src/app/page.tsx`    | Home page            | ✅ Ready |
+| `src/app/layout.tsx`  | Root layout          | ✅ Ready |
+| `src/app/globals.css` | Global styles        | ✅ Ready |
+| `.kilocode/`          | AI context & recipes | ✅ Ready |
 
 ## Current Focus
 
@@ -37,6 +37,7 @@ The template is ready. Next steps depend on user requirements:
 ### To add a new page:
 
 Create a file at `src/app/[route]/page.tsx`:
+
 ```tsx
 export default function NewPage() {
   return <div>New page content</div>;
@@ -46,10 +47,15 @@ export default function NewPage() {
 ### To add components:
 
 Create `src/components/` directory and add components:
+
 ```tsx
 // src/components/ui/Button.tsx
 export function Button({ children }: { children: React.ReactNode }) {
-  return <button className="px-4 py-2 bg-blue-600 text-white rounded">{children}</button>;
+  return (
+    <button className="px-4 py-2 bg-blue-600 text-white rounded">
+      {children}
+    </button>
+  );
 }
 ```
 
@@ -60,6 +66,7 @@ Follow `.kilocode/recipes/add-database.md`
 ### To add API routes:
 
 Create `src/app/api/[route]/route.ts`:
+
 ```tsx
 import { NextResponse } from "next/server";
 
@@ -70,8 +77,8 @@ export async function GET() {
 
 ## Available Recipes
 
-| Recipe | File | Use Case |
-|--------|------|----------|
+| Recipe       | File                                | Use Case                               |
+| ------------ | ----------------------------------- | -------------------------------------- |
 | Add Database | `.kilocode/recipes/add-database.md` | Data persistence with Drizzle + SQLite |
 
 ## Pending Improvements
@@ -82,7 +89,7 @@ export async function GET() {
 
 ## Session History
 
-| Date | Changes |
-|------|---------|
-| Initial | Template created with base setup |
-| 2026-03-01 | Cloned Save the Children South Africa homepage (savethechildren.org.za) — added Header, HeroBanner, HowWeHelpChildren, ImpactStats, HowYouCanHelp, NewsletterSection, Footer components with brand colors (red #e2001a), Oswald + Lato fonts |
+| Date       | Changes                                                                                                                                                                                                                       |
+| ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Initial    | Template created with base setup                                                                                                                                                                                              |
+| 2026-03-01 | Cloned FOLMADI Nigeria homepage (savethechildren.org.za) — added Header, HeroBanner, HowWeHelpChildren, ImpactStats, HowYouCanHelp, NewsletterSection, Footer components with brand colors (red #e2001a), Oswald + Lato fonts |

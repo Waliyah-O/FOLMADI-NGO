@@ -72,14 +72,14 @@ export default function HeroBanner() {
             textShadow: "0 1px 4px rgba(0,0,0,0.4)",
           }}
         >
-          Save the Children believes every child deserves a future. In South
-          Africa and around the world, we give children a healthy start in life,
-          the opportunity to learn and protection from harm.
+          FOLMADI believes every child deserves a future. In Nigeria and around
+          the world, we give children a healthy start in life, the opportunity
+          to learn and protection from harm.
         </p>
 
         <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
           <Link
-            href="/donate-2018"
+            href="/donate"
             style={{
               backgroundColor: "#e2001a",
               color: "#fff",

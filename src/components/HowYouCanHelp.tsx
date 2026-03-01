@@ -4,8 +4,8 @@ const helpOptions = [
   {
     title: "Make a monthly donation",
     description:
-      "For as little as R5 a day, you will witness how your support transforms the lives of children in South Africa.",
-    href: "/donate-2018",
+      "For as little as R5 a day, you will witness how your support transforms the lives of children in Nigeria.",
+    href: "/donate",
     icon: "💝",
     cta: "DONATE NOW",
     featured: true,

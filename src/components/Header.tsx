@@ -19,7 +19,7 @@ const navItems = [
     label: "WHAT WE DO",
     href: "/what-we-do",
     children: [
-      { label: "OUR WORK IN SOUTH AFRICA", href: "/what-we-do/our-work" },
+      { label: "OUR WORK IN NIGERIA", href: "/what-we-do/our-work" },
       { label: "IN TIMES OF CRISIS", href: "/what-we-do/in-times-of-crisis" },
       {
         label: "HELP US CHANGE THE LIVES OF CHILDREN",
@@ -77,7 +77,7 @@ export default function Header() {
       >
         <div className="container">
           <Link
-            href="/donate-2018"
+            href="/donate"
             style={{
               color: "#fff",
               fontFamily: "var(--font-oswald)",
@@ -143,7 +143,7 @@ export default function Header() {
                     lineHeight: 1.1,
                   }}
                 >
-                  Save the Children
+                  FOLMADI
                 </div>
                 <div
                   style={{
@@ -154,7 +154,7 @@ export default function Header() {
                     letterSpacing: "0.1em",
                   }}
                 >
-                  South Africa
+                  Nigeria
                 </div>
               </div>
             </div>
@@ -242,7 +242,7 @@ export default function Header() {
 
           {/* Donate button + mobile toggle */}
           <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-            <Link href="/donate-2018" className="btn-donate">
+            <Link href="/donate" className="btn-donate">
               DONATE
             </Link>
             <button
@@ -274,7 +274,11 @@ export default function Header() {
                 }}
               />
               <div
-                style={{ width: "24px", height: "2px", backgroundColor: "#333" }}
+                style={{
+                  width: "24px",
+                  height: "2px",
+                  backgroundColor: "#333",
+                }}
               />
             </button>
           </div>

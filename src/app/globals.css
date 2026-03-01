@@ -4,7 +4,7 @@
   --font-oswald: "Oswald", sans-serif;
   --font-lato: "Lato", sans-serif;
 
-  /* Save the Children brand colors */
+  /* FOLMADI brand colors */
   --color-red: #e2001a;
   --color-red-dark: #c0001a;
   --color-white: #ffffff;
@@ -122,4 +122,19 @@ img {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
+}
+
+.socialBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: #333;
+  color: #fff;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+.socialBtn:hover {
+  background: #e2001a;
 }

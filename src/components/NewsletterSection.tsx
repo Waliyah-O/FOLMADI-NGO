@@ -82,7 +82,7 @@ export default function NewsletterSection() {
                   fontSize: "0.95rem",
                 }}
               >
-                Get the latest news from Save the Children South Africa
+                Get the latest news from FOLMADI Nigeria
               </p>
             </div>
           </div>
@@ -110,7 +110,7 @@ export default function NewsletterSection() {
               }}
             >
               Stay up to date with our latest news, stories and ways you can
-              help children in South Africa and around the world.
+              help children in Nigeria and around the world.
             </p>
 
             {submitted ? (

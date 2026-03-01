@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 
 const footerLinks = [
@@ -14,7 +16,7 @@ const footerLinks = [
   {
     heading: "What We Do",
     links: [
-      { label: "Our Work in South Africa", href: "/what-we-do/our-work" },
+      { label: "Our Work in Nigeria", href: "/what-we-do/our-work" },
       { label: "Education", href: "/what-we-do/our-work/education" },
       {
         label: "Child Protection",
@@ -30,7 +32,7 @@ const footerLinks = [
   {
     heading: "Get Involved",
     links: [
-      { label: "Make a Donation", href: "/donate-2018" },
+      { label: "Make a Donation", href: "/donate" },
       {
         label: "Become an Activist",
         href: "/get-involved/if-you-are-a-person/become-an-activist",
@@ -201,7 +203,7 @@ export default function Footer() {
                     lineHeight: 1.1,
                   }}
                 >
-                  Save the Children
+                  FOLMADI
                 </div>
                 <div
                   style={{
@@ -212,7 +214,7 @@ export default function Footer() {
                     letterSpacing: "0.1em",
                   }}
                 >
-                  South Africa
+                  Nigeria
                 </div>
               </div>
             </div>
@@ -225,9 +227,9 @@ export default function Footer() {
                 lineHeight: 1.6,
               }}
             >
-              Save the Children believes every child deserves a future. We give
-              children a healthy start in life, the opportunity to learn and
-              protection from harm.
+              FOLMADI believes every child deserves a future. We give children a
+              healthy start in life, the opportunity to learn and protection
+              from harm.
             </p>
           </div>
 
@@ -352,9 +354,8 @@ export default function Footer() {
               color: "#666",
             }}
           >
-            © {new Date().getFullYear()} Save the Children South Africa. All
-            rights reserved. NPO Registration No: 003-867 NPO | PBO Registration
-            No: 930003167
+            © {new Date().getFullYear()} FOLMADI Nigeria. All rights reserved.
+            NPO Registration No: 003-867 NPO | PBO Registration No: 930003167
           </p>
           <div style={{ display: "flex", gap: "20px", flexWrap: "wrap" }}>
             {[
