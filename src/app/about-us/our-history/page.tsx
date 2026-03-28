@@ -36,7 +36,7 @@ const milestones = [
     year: "2018",
     title: "Children's Rights & Business",
     description:
-      "Launched the Children's Rights and Business Principles initiative, engaging the private sector in upholding children's rights.",
+      "Launched the People's Rights and Business Principles initiative, engaging the private sector in upholding children's rights.",
   },
   {
     year: "2022",
@@ -80,12 +80,12 @@ export default function OurHistoryPage() {
                 textAlign: "center",
               }}
             >
-              FOLMADI Nigeria was born out of a deep conviction that every child
-              in Nigeria deserves a safe, healthy, and fulfilling childhood.
-              Over the past two and a half decades, we have grown from a small
-              advocacy group into a nationally recognised organisation with
-              programmes spanning child protection, education, health, and
-              emergency response.
+              FOLMADI Nigeria was born out of a deep conviction that every
+              individual in Nigeria deserves a safe, healthy, and fulfilling
+              childhood. Over the past two and a half decades, we have grown
+              from a small advocacy group into a nationally recognised
+              organisation with programmes spanning child protection, education,
+              health, and emergency response.
             </p>
 
             {/* Timeline */}

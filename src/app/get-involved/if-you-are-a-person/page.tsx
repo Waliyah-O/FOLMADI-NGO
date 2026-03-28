@@ -6,7 +6,7 @@ const options = [
   {
     title: "Make a Donation",
     description:
-      "Your financial contribution directly funds our programmes for children. Choose a one-time gift or set up a monthly donation to provide sustained support.",
+      "Your financial contribution directly funds our programmes. Choose a one-time gift or set up a monthly donation to provide sustained support.",
     href: "/donate",
     cta: "DONATE NOW",
     icon: "💝",

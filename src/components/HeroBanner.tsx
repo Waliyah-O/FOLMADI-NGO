@@ -105,7 +105,7 @@ export default function HeroBanner() {
               textShadow: "0 2px 8px rgba(0,0,0,0.3)",
             }}
           >
-            Until every child can be a child
+            Until every individual can be a child
           </h1>
 
           <p
@@ -119,7 +119,7 @@ export default function HeroBanner() {
               textShadow: "0 1px 4px rgba(0,0,0,0.4)",
             }}
           >
-            FOLMADI believes every child deserves a future. In Nigeria and
+            FOLMADI believes every individual deserves a future. In Nigeria and
             around the world, we give children a healthy start in life, the
             opportunity to learn and protection from harm.
           </p>

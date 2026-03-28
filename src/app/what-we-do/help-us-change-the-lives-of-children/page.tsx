@@ -75,7 +75,7 @@ export default function HelpUsChangeLivesPage() {
     <PageLayout>
       <PageHero
         title="Help Us Change Lives"
-        subtitle="Every child deserves a future. Together, we can make that a reality. Here's how you can support our work."
+        subtitle="Everyone deserves a future. Together, we can make that a reality. Here's how you can support our work."
       />
 
       {/* Ways to help */}

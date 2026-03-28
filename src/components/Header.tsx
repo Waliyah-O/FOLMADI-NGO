@@ -6,56 +6,6 @@ import { ChevronDown, Menu, X } from "lucide-react";
 import { NAV_ITEMS, NAV_LINKS } from "@/lib/data";
 import clsx from "clsx";
 
-// const navItems = [
-//   {
-//     label: "ABOUT US",
-//     href: "/about-us",
-//     children: [
-//       { label: "OUR HISTORY", href: "/about-us/our-history" },
-//       { label: "OUR SUCCESSES", href: "/about-us/our-successes" },
-//       { label: "OUR PEOPLE", href: "/about-us/our-people" },
-//       { label: "ACCOUNTABILITY", href: "/about-us/accountability" },
-//       { label: "CONTACT US", href: "/about-us/contact-us" },
-//     ],
-//   },
-//   {
-//     label: "WHAT WE DO",
-//     href: "/what-we-do",
-//     children: [
-//       { label: "OUR WORK IN NIGERIA", href: "/what-we-do/our-work" },
-//       { label: "IN TIMES OF CRISIS", href: "/what-we-do/in-times-of-crisis" },
-//       {
-//         label: "HELP US CHANGE THE LIVES OF CHILDREN",
-//         href: "/what-we-do/help-us-change-the-lives-of-children",
-//       },
-//     ],
-//   },
-//   {
-//     label: "GET INVOLVED",
-//     href: "/get-involved",
-//     children: [
-//       {
-//         label: "IF YOU ARE A PERSON",
-//         href: "/get-involved/if-you-are-a-person",
-//       },
-//       {
-//         label: "IF YOU ARE A COMPANY",
-//         href: "/get-involved/if-you-are-a-company",
-//       },
-//     ],
-//   },
-//   {
-//     label: "NEWS & EVENTS",
-//     href: "/news-and-events",
-//     children: [
-//       { label: "NEWS", href: "/news-and-events/news" },
-//       { label: "BLOGS", href: "/news-and-events/blogs" },
-//       { label: "UPCOMING EVENTS", href: "/news-and-events/upcoming-events" },
-//       { label: "PUBLICATIONS", href: "/news-and-events/publications" },
-//     ],
-//   },
-// ];
-
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
@@ -330,3 +280,53 @@ export default function Header() {
     </header>
   );
 }
+
+// const navItems = [
+//   {
+//     label: "ABOUT US",
+//     href: "/about-us",
+//     children: [
+//       { label: "OUR HISTORY", href: "/about-us/our-history" },
+//       { label: "OUR SUCCESSES", href: "/about-us/our-successes" },
+//       { label: "OUR PEOPLE", href: "/about-us/our-people" },
+//       { label: "ACCOUNTABILITY", href: "/about-us/accountability" },
+//       { label: "CONTACT US", href: "/about-us/contact-us" },
+//     ],
+//   },
+//   {
+//     label: "WHAT WE DO",
+//     href: "/what-we-do",
+//     children: [
+//       { label: "OUR WORK IN NIGERIA", href: "/what-we-do/our-work" },
+//       { label: "IN TIMES OF CRISIS", href: "/what-we-do/in-times-of-crisis" },
+//       {
+//         label: "HELP US CHANGE THE LIVES OF CHILDREN",
+//         href: "/what-we-do/help-us-change-the-lives-of-children",
+//       },
+//     ],
+//   },
+//   {
+//     label: "GET INVOLVED",
+//     href: "/get-involved",
+//     children: [
+//       {
+//         label: "IF YOU ARE A PERSON",
+//         href: "/get-involved/if-you-are-a-person",
+//       },
+//       {
+//         label: "IF YOU ARE A COMPANY",
+//         href: "/get-involved/if-you-are-a-company",
+//       },
+//     ],
+//   },
+//   {
+//     label: "NEWS & EVENTS",
+//     href: "/news-and-events",
+//     children: [
+//       { label: "NEWS", href: "/news-and-events/news" },
+//       { label: "BLOGS", href: "/news-and-events/blogs" },
+//       { label: "UPCOMING EVENTS", href: "/news-and-events/upcoming-events" },
+//       { label: "PUBLICATIONS", href: "/news-and-events/publications" },
+//     ],
+//   },
+// ];

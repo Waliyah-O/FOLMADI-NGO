@@ -34,7 +34,7 @@ const workAreas = [
   {
     title: "Health & Nutrition",
     description:
-      "We work to ensure every child has access to quality healthcare and adequate nutrition. Our programmes address malnutrition, maternal health, and adolescent sexual and reproductive health.",
+      "We work to ensure every individual has access to quality healthcare and adequate nutrition. Our programmes address malnutrition, maternal health, and adolescent sexual and reproductive health.",
     goals: [
       "Support provision of gender-sensitive comprehensive sexuality education to 80,000 children",
       "Treat 15,000 severely malnourished children under five annually",

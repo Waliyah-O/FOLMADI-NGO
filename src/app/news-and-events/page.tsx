@@ -14,7 +14,7 @@ const sections = [
   {
     title: "Blogs",
     description:
-      "Read in-depth perspectives from our staff, partners, and the children and communities we work with.",
+      "Read in-depth perspectives from our staff, partners, and the people and communities we work with.",
     href: "/news-and-events/blogs",
     icon: "✍️",
     color: "#0779bf",
@@ -52,7 +52,7 @@ const featuredNews = [
     date: "November 20, 2025",
     category: "News",
     excerpt:
-      "On World Children's Day, FOLMADI Nigeria called on the Federal Government to increase investment in early childhood education and ensure every child has access to quality schooling.",
+      "On World Children's Day, FOLMADI Nigeria called on the Federal Government to increase investment in early childhood education and ensure every individual has access to quality schooling.",
     href: "/news-and-events/news",
   },
   {

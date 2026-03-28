@@ -35,9 +35,9 @@ const reports = [
     size: "1.0 MB",
   },
   {
-    title: "Child Safeguarding Policy",
+    title: "Safeguarding Policy",
     description:
-      "Our comprehensive policy for protecting children from harm in all our programmes and activities.",
+      "Our comprehensive policy for protecting people from harm in all our programmes and activities.",
     type: "Policy Document",
     year: "2024",
     size: "0.8 MB",
@@ -67,9 +67,9 @@ const principles = [
   },
   {
     icon: "🛡️",
-    title: "Child Safeguarding",
+    title: "Child Protection",
     description:
-      "We have a zero-tolerance policy for any form of abuse or exploitation. All staff and volunteers undergo mandatory safeguarding training.",
+      "We have a zero-tolerance policy for any form of abuse or exploitation. All staff and volunteers undergo mandatory child safeguarding training.",
   },
   {
     icon: "📋",
@@ -90,7 +90,7 @@ export default function AccountabilityPage() {
     <PageLayout>
       <PageHero
         title="Accountability"
-        subtitle="We are committed to the highest standards of transparency and accountability. Our donors, partners, and the children we serve deserve nothing less."
+        subtitle="We are committed to the highest standards of transparency and accountability. Our donors, partners, and the people we serve deserve nothing less."
       />
 
       {/* Principles */}

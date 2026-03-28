@@ -32,9 +32,9 @@ const partnershipTypes = [
     color: "#ffd100",
   },
   {
-    title: "Children's Rights & Business",
+    title: "People's Rights & Business",
     description:
-      "Adopt the Children's Rights and Business Principles and demonstrate your commitment to respecting and supporting children's rights across your operations and supply chain.",
+      "Adopt the People's Rights and Business Principles and demonstrate your commitment to respecting and supporting people's rights across your operations and supply chain.",
     icon: "⚖️",
     color: "#c0613a",
   },
@@ -258,7 +258,7 @@ export default function IfYouAreACompanyPage() {
       </section>
 
       {/* Current partners */}
-      <section style={{ padding: "60px 0", backgroundColor: "#fff" }}>
+      {/* <section style={{ padding: "60px 0", backgroundColor: "#fff" }}>
         <div className="container">
           <h2
             className="section-heading"
@@ -330,7 +330,7 @@ export default function IfYouAreACompanyPage() {
             </Link>
           </div>
         </div>
-      </section>
+      </section> */}
     </PageLayout>
   );
 }

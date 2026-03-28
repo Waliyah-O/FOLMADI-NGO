@@ -41,7 +41,7 @@ const blogs = [
     date: "July 10, 2025",
     readTime: "5 min read",
     excerpt:
-      "From supply chains to marketing practices, businesses have a profound impact on children's lives. The Children's Rights and Business Principles provide a framework for companies to take responsibility.",
+      "From supply chains to marketing practices, businesses have a profound impact on children's lives. The People's Rights and Business Principles provide a framework for companies to take responsibility.",
     tags: ["Business", "Rights", "Advocacy"],
   },
   {

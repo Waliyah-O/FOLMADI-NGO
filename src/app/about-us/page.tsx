@@ -51,7 +51,7 @@ export default function AboutUsPage() {
     <PageLayout>
       <PageHero
         title="About Us"
-        subtitle="FOLMADI believes every child deserves a future. For over two decades, we have been working in Nigeria and around the world to give children a healthy start in life, the opportunity to learn, and protection from harm."
+        subtitle="FOLMADI believes every individual deserves a future. For over two decades, we have been working in Nigeria and around the world to give children a healthy start in life, the opportunity to learn, and protection from harm."
       />
 
       {/* Mission section */}
@@ -103,8 +103,8 @@ export default function AboutUsPage() {
                   lineHeight: 1.8,
                 }}
               >
-                Our vision is a world in which every child attains the right to
-                survival, protection, development, and participation.
+                Our vision is a world in which every individual attains the
+                right to survival, protection, development, and participation.
               </p>
             </div>
             <div

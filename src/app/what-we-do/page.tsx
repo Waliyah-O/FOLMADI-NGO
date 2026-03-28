@@ -15,7 +15,7 @@ const programmes = [
   {
     title: "Education",
     description:
-      "We believe every child has the right to quality education. We support early childhood development, improve school quality, and help keep children in school.",
+      "We believe every individual has the right to quality education. We support early childhood development, improve school quality, and help keep children in school.",
     href: "/what-we-do/our-work",
     color: "#ffd100",
     icon: "📚",

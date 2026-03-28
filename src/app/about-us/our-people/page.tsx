@@ -66,7 +66,7 @@ export default function OurPeoplePage() {
     <PageLayout>
       <PageHero
         title="Our People"
-        subtitle="Behind every programme and every child reached is a team of passionate, dedicated individuals committed to making a difference."
+        subtitle="Behind every programme and every individual reached is a team of passionate, dedicated individuals committed to making a difference."
       />
 
       {/* Leadership team */}

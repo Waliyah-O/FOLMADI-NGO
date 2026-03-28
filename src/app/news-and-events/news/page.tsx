@@ -25,7 +25,7 @@ const newsItems = [
     date: "November 20, 2025",
     category: "Advocacy",
     excerpt:
-      "On World Children's Day, FOLMADI Nigeria called on the Federal Government to increase investment in early childhood education and ensure every child has access to quality schooling.",
+      "On World Children's Day, FOLMADI Nigeria called on the Federal Government to increase investment in early childhood education and ensure every individual has access to quality schooling.",
     readTime: "2 min read",
   },
   {

@@ -227,9 +227,9 @@ export default function Footer() {
                 lineHeight: 1.6,
               }}
             >
-              FOLMADI believes every child deserves a future. We give children a
-              healthy start in life, the opportunity to learn and protection
-              from harm.
+              FOLMADI believes every individual deserves a future. We give
+              children a healthy start in life, the opportunity to learn and
+              protection from harm.
             </p>
           </div>
 
