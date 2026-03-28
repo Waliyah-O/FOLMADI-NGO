@@ -60,11 +60,17 @@ function formatDate(date: Date | string | null): string {
 
 async function getNewsItems() {
   try {
-    const items = await db
+    const items = (await db
       .select()
       .from(news)
       .where(eq(news.published, 1))
-      .orderBy(desc(news.createdAt));
+      .orderBy(desc(news.createdAt))) as Array<{
+      title: string;
+      createdAt: Date | null;
+      category: string;
+      excerpt: string;
+      readTime: string | null;
+    }>;
 
     if (items.length === 0) return fallbackNews;
 

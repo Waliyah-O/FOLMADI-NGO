@@ -88,10 +88,21 @@ async function getEventData(): Promise<{
   past: PastEventData[];
 }> {
   try {
-    const allEvents = await db
+    const allEvents = (await db
       .select()
       .from(events)
-      .orderBy(desc(events.eventDate));
+      .orderBy(desc(events.eventDate))) as Array<{
+      title: string;
+      description: string;
+      eventDate: string;
+      eventTime: string | null;
+      location: string;
+      eventType: string;
+      ctaText: string | null;
+      ctaColor: string | null;
+      featured: number;
+      published: number;
+    }>;
 
     const published = allEvents.filter((e) => e.published === 1);
     if (published.length === 0) {
