@@ -14,6 +14,8 @@ The template is a clean Next.js 16 starter with TypeScript and Tailwind CSS 4. I
 - [x] ESLint configuration
 - [x] Memory bank documentation
 - [x] Recipe system for common features
+- [x] Custom 404 not-found page (`src/app/not-found.tsx`)
+- [x] Installed missing `clsx` dependency
 
 ## Current Structure
 
@@ -89,8 +91,8 @@ export async function GET() {
 
 ## Session History
 
-| Date                   | Changes                                                                                                                                                                                   |
-| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Initial                | Template created with base setup                                                                                                                                                          |
-| 2026-03-01             | Cloned FOLMADI Nigeria homepage (folmadi.com.ng) — added Header, HeroBanner, HowWeHelpChildren, ImpactStats, HowYouCanHelp, NewsletterSection, Footer components with brand colors (red # | 2026-03-01 | Cloned FOLMADI Nigeria homepage (folmadi.com.ng) — added Header, HeroBanner, HowWeHelpChildren, ImpactStats, HowYouCanHelp, NewsletterSection, Footer components with brand colors (red #e07a52 ), Oswald + Lato fonts |
-| ), Oswald + Lato fonts |
+| Date       | Changes                                                                                                                                                                                   |
+| ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Initial    | Template created with base setup                                                                                                                                                          |
+| 2026-03-01 | Cloned FOLMADI Nigeria homepage (folmadi.com.ng) — added Header, HeroBanner, HowWeHelpChildren, ImpactStats, HowYouCanHelp, NewsletterSection, Footer components with brand colors (terracotta #c0613a), Oswald + Lato + Nunito fonts |
+| 2026-03-28 | Added custom 404 not-found page with branded hero, 404 watermark, quick navigation cards (Home, What We Do, Get Involved, News & Events), and contact CTA. Installed missing `clsx` dependency. |
