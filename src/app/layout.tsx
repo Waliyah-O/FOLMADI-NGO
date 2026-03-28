@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Oswald, Lato } from "next/font/google";
+import { Oswald, Lato, Nunito } from "next/font/google";
+
 import "./globals.css";
 
 const oswald = Oswald({
@@ -15,6 +16,11 @@ const lato = Lato({
   style: ["normal", "italic"],
   variable: "--font-lato",
   display: "swap",
+});
+
+const nunito = Nunito({
+  subsets: ["latin"],
+  variable: "--font-nunito",
 });
 
 export const metadata: Metadata = {
@@ -55,7 +61,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${oswald.variable} ${lato.variable}`}>
-      <body>{children}</body>
+      <body className={nunito.className}>{children}</body>
     </html>
   );
 }

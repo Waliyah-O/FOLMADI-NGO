@@ -1,3 +1,5 @@
+"use client";
+
 import Header from "@/components/Header";
 import HeroBanner from "@/components/HeroBanner";
 import HowWeHelpChildren from "@/components/HowWeHelpChildren";
