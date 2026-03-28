@@ -56,10 +56,19 @@ function formatDate(date: Date | string | null): string {
 
 async function getBlogItems() {
   try {
-    const items = await db
+    const items = (await db
       .select()
       .from(blogs)
-      .orderBy(desc(blogs.createdAt));
+      .orderBy(desc(blogs.createdAt))) as Array<{
+      title: string;
+      excerpt: string;
+      authorName: string;
+      authorRole: string | null;
+      createdAt: Date | null;
+      readTime: string | null;
+      tags: string | null;
+      published: number;
+    }>;
 
     const published = items.filter((b) => b.published === 1);
     if (published.length === 0) return fallbackBlogs;
