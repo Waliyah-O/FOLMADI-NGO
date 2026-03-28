@@ -1,14 +1,17 @@
 import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
 import Link from "next/link";
+import { db } from "@/db";
+import { news } from "@/db/schema";
+import { eq, desc } from "drizzle-orm";
 
-const newsItems = [
+const fallbackNews = [
   {
     title: "FOLMADI Launches New Child Protection Programme in Borno State",
     date: "February 20, 2026",
     category: "Programme Update",
     excerpt:
-      "FOLMADI Nigeria has launched a new community-based child protection programme in Borno State, targeting 10,000 children affected by the ongoing conflict in the North-East. The programme will establish 20 community child protection committees and train 500 social workers.",
+      "FOLMADI Nigeria has launched a new community-based child protection programme in Borno State, targeting 10,000 children affected by the ongoing conflict in the North-East.",
     readTime: "3 min read",
   },
   {
@@ -16,42 +19,16 @@ const newsItems = [
     date: "January 15, 2026",
     category: "Emergency Response",
     excerpt:
-      "Following severe flooding in Anambra State, FOLMADI has deployed an emergency response team to provide food, clean water, and temporary learning spaces for over 5,000 displaced children.",
+      "Following severe flooding in Anambra State, FOLMADI has deployed an emergency response team to provide food, clean water, and temporary learning spaces.",
     readTime: "4 min read",
   },
   {
-    title:
-      "World Children's Day: FOLMADI Calls for Greater Investment in Education",
+    title: "World Children's Day: FOLMADI Calls for Greater Investment in Education",
     date: "November 20, 2025",
     category: "Advocacy",
     excerpt:
-      "On World Children's Day, FOLMADI Nigeria called on the Federal Government to increase investment in early childhood education and ensure every individual has access to quality schooling.",
+      "On World Children's Day, FOLMADI Nigeria called on the Federal Government to increase investment in early childhood education.",
     readTime: "2 min read",
-  },
-  {
-    title: "FOLMADI Partners with MTN Nigeria to Expand Digital Learning",
-    date: "October 30, 2025",
-    category: "Partnership",
-    excerpt:
-      "FOLMADI Nigeria and MTN Nigeria have announced a new partnership to expand digital learning opportunities for children in underserved communities across six states.",
-    readTime: "3 min read",
-  },
-  {
-    title:
-      "New Report: Child Malnutrition Rates Declining in Target Communities",
-    date: "September 12, 2025",
-    category: "Research",
-    excerpt:
-      "A new evaluation of FOLMADI's nutrition programme shows a 25% reduction in stunting rates in target communities over three years, demonstrating the effectiveness of community-based approaches.",
-    readTime: "5 min read",
-  },
-  {
-    title: "FOLMADI Celebrates 25 Years of Impact in Nigeria",
-    date: "August 1, 2025",
-    category: "Milestone",
-    excerpt:
-      "FOLMADI Nigeria marked its 25th anniversary with a celebration of the over 2 million children reached through its programmes since 1999. The event brought together staff, partners, donors, and community members.",
-    readTime: "4 min read",
   },
 ];
 
@@ -71,7 +48,41 @@ export const metadata = {
     "Stay up to date with the latest news from FOLMADI Nigeria — programme updates, advocacy wins, and stories from the field.",
 };
 
-export default function NewsPage() {
+function formatDate(date: Date | string | null): string {
+  if (!date) return "";
+  const d = typeof date === "string" ? new Date(date) : date;
+  return d.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+}
+
+async function getNewsItems() {
+  try {
+    const items = await db
+      .select()
+      .from(news)
+      .where(eq(news.published, 1))
+      .orderBy(desc(news.createdAt));
+
+    if (items.length === 0) return fallbackNews;
+
+    return items.map((item) => ({
+      title: item.title,
+      date: formatDate(item.createdAt),
+      category: item.category,
+      excerpt: item.excerpt,
+      readTime: item.readTime || "3 min read",
+    }));
+  } catch {
+    return fallbackNews;
+  }
+}
+
+export default async function NewsPage() {
+  const newsItems = await getNewsItems();
+
   return (
     <PageLayout>
       <PageHero
@@ -214,31 +225,11 @@ export default function NewsPage() {
                       letterSpacing: "0.05em",
                     }}
                   >
-                    READ MORE →
+                    READ MORE
                   </Link>
                 </div>
               </article>
             ))}
-          </div>
-
-          {/* Load more */}
-          <div style={{ textAlign: "center", marginTop: "48px" }}>
-            <button
-              style={{
-                fontFamily: "var(--font-oswald)",
-                fontSize: "0.9rem",
-                fontWeight: 600,
-                textTransform: "uppercase",
-                letterSpacing: "0.05em",
-                padding: "14px 36px",
-                border: "2px solid #c0613a",
-                backgroundColor: "transparent",
-                color: "#c0613a",
-                cursor: "pointer",
-              }}
-            >
-              LOAD MORE NEWS
-            </button>
           </div>
         </div>
       </section>

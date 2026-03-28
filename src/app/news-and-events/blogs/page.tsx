@@ -1,8 +1,11 @@
 import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
 import Link from "next/link";
+import { db } from "@/db";
+import { blogs } from "@/db/schema";
+import { desc } from "drizzle-orm";
 
-const blogs = [
+const fallbackBlogs = [
   {
     title: "How One Community in Kano is Transforming Child Nutrition",
     author: "Dr. Ngozi Nwosu",
@@ -10,18 +13,17 @@ const blogs = [
     date: "October 15, 2025",
     readTime: "6 min read",
     excerpt:
-      "In a small community in Kano State, a group of mothers trained by FOLMADI are changing the way their community thinks about child nutrition — one meal at a time. This is their story.",
+      "In a small community in Kano State, a group of mothers trained by FOLMADI are changing the way their community thinks about child nutrition — one meal at a time.",
     tags: ["Nutrition", "Community", "Kano"],
   },
   {
-    title:
-      "Why Early Childhood Education is the Best Investment Nigeria Can Make",
+    title: "Why Early Childhood Education is the Best Investment Nigeria Can Make",
     author: "Ms. Hauwa Musa",
     authorRole: "Head of Education",
     date: "September 5, 2025",
     readTime: "8 min read",
     excerpt:
-      "Research consistently shows that every naira invested in early childhood education yields returns of up to ₦17 in economic benefits. Yet Nigeria continues to underinvest in this critical period. Here's why that needs to change.",
+      "Research consistently shows that every naira invested in early childhood education yields returns of up to ₦17 in economic benefits.",
     tags: ["Education", "Policy", "ECCD"],
   },
   {
@@ -31,38 +33,8 @@ const blogs = [
     date: "August 20, 2025",
     readTime: "7 min read",
     excerpt:
-      "While the physical needs of children in conflict zones receive attention, the mental health crisis is often overlooked. FOLMADI's psychosocial support programmes are addressing this gap — but much more is needed.",
+      "While the physical needs of children in conflict zones receive attention, the mental health crisis is often overlooked.",
     tags: ["Mental Health", "Emergency", "North-East"],
-  },
-  {
-    title: "Children's Rights and Business: Why It's Everyone's Responsibility",
-    author: "Mr. Babatunde Eze",
-    authorRole: "Director of Advocacy",
-    date: "July 10, 2025",
-    readTime: "5 min read",
-    excerpt:
-      "From supply chains to marketing practices, businesses have a profound impact on children's lives. The People's Rights and Business Principles provide a framework for companies to take responsibility.",
-    tags: ["Business", "Rights", "Advocacy"],
-  },
-  {
-    title: "A Day in the Life of a FOLMADI Community Health Worker",
-    author: "FOLMADI Communications Team",
-    authorRole: "Communications",
-    date: "June 25, 2025",
-    readTime: "4 min read",
-    excerpt:
-      "Meet Aisha, a community health worker in Zamfara State who walks miles every day to reach families with life-saving nutrition and health information. Her dedication is changing lives.",
-    tags: ["Health", "Community", "Zamfara"],
-  },
-  {
-    title: "What 25 Years of Working for Children Has Taught Us",
-    author: "Mr Austin Okorowu",
-    authorRole: "Country Director",
-    date: "May 15, 2025",
-    readTime: "10 min read",
-    excerpt:
-      "As FOLMADI marks 25 years of working for children in Nigeria, our Country Director reflects on the lessons learned, the progress made, and the work that still lies ahead.",
-    tags: ["Anniversary", "Reflection", "Leadership"],
   },
 ];
 
@@ -72,7 +44,43 @@ export const metadata = {
     "Read in-depth perspectives from FOLMADI Nigeria staff, partners, and the communities we work with.",
 };
 
-export default function BlogsPage() {
+function formatDate(date: Date | string | null): string {
+  if (!date) return "";
+  const d = typeof date === "string" ? new Date(date) : date;
+  return d.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+}
+
+async function getBlogItems() {
+  try {
+    const items = await db
+      .select()
+      .from(blogs)
+      .orderBy(desc(blogs.createdAt));
+
+    const published = items.filter((b) => b.published === 1);
+    if (published.length === 0) return fallbackBlogs;
+
+    return published.map((item) => ({
+      title: item.title,
+      author: item.authorName,
+      authorRole: item.authorRole || "",
+      date: formatDate(item.createdAt),
+      readTime: item.readTime || "5 min read",
+      excerpt: item.excerpt,
+      tags: JSON.parse(item.tags || "[]"),
+    }));
+  } catch {
+    return fallbackBlogs;
+  }
+}
+
+export default async function BlogsPage() {
+  const blogItems = await getBlogItems();
+
   return (
     <PageLayout>
       <PageHero
@@ -86,7 +94,7 @@ export default function BlogsPage() {
           <div
             style={{ display: "flex", flexDirection: "column", gap: "32px" }}
           >
-            {blogs.map((blog, index) => (
+            {blogItems.map((blog, index) => (
               <article
                 key={blog.title}
                 style={{
@@ -131,7 +139,7 @@ export default function BlogsPage() {
                       marginBottom: "12px",
                     }}
                   >
-                    {blog.tags.map((tag) => (
+                    {blog.tags.map((tag: string) => (
                       <span
                         key={tag}
                         style={{
@@ -208,7 +216,7 @@ export default function BlogsPage() {
                       >
                         {blog.author
                           .split(" ")
-                          .map((n) => n[0])
+                          .map((n: string) => n[0])
                           .slice(0, 2)
                           .join("")}
                       </div>
@@ -246,7 +254,7 @@ export default function BlogsPage() {
                         letterSpacing: "0.05em",
                       }}
                     >
-                      READ MORE →
+                      READ MORE
                     </Link>
                   </div>
                 </div>

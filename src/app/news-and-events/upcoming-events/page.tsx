@@ -1,7 +1,10 @@
 import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
+import { db } from "@/db";
+import { events } from "@/db/schema";
+import { desc } from "drizzle-orm";
 
-const upcomingEvents = [
+const fallbackUpcoming = [
   {
     title: "Annual Charity Gala Dinner 2026",
     date: "March 28, 2026",
@@ -9,7 +12,7 @@ const upcomingEvents = [
     location: "Eko Hotel & Suites, Lagos",
     type: "Fundraising",
     description:
-      "Join us for our annual gala dinner — an evening of celebration, inspiration, and fundraising for children across Nigeria. Featuring keynote speakers, live entertainment, and a charity auction.",
+      "Join us for our annual gala dinner — an evening of celebration, inspiration, and fundraising for children across Nigeria.",
     cta: "BUY TICKETS",
     color: "#c0613a",
     featured: true,
@@ -21,7 +24,7 @@ const upcomingEvents = [
     location: "Millennium Park, Abuja",
     type: "Awareness",
     description:
-      "Join thousands of Nigerians in a 5km walk to raise awareness about children's rights. All proceeds go to FOLMADI's child protection programmes.",
+      "Join thousands of Nigerians in a 5km walk to raise awareness about children's rights.",
     cta: "REGISTER NOW",
     color: "#00a651",
     featured: false,
@@ -33,38 +36,14 @@ const upcomingEvents = [
     location: "FOLMADI Abuja Office",
     type: "Workshop",
     description:
-      "A one-day workshop for civil society organisations, government officials, and community leaders on child rights advocacy and policy engagement.",
+      "A one-day workshop for civil society organisations, government officials, and community leaders on child rights advocacy.",
     cta: "REGISTER",
     color: "#0779bf",
     featured: false,
   },
-  {
-    title: "Corporate CSR Forum: Children's Rights & Business",
-    date: "May 8, 2026",
-    time: "10:00 AM – 4:00 PM",
-    location: "Transcorp Hilton, Abuja",
-    type: "Conference",
-    description:
-      "A forum for business leaders to explore how companies can integrate children's rights into their operations, supply chains, and CSR programmes.",
-    cta: "REGISTER",
-    color: "#ffd100",
-    featured: false,
-  },
-  {
-    title: "FOLMADI Annual Report Launch 2025",
-    date: "March 10, 2026",
-    time: "2:00 PM – 4:00 PM",
-    location: "Online (Zoom)",
-    type: "Online Event",
-    description:
-      "Join us online for the launch of our 2025 Annual Report. Hear from our leadership team about our impact, challenges, and plans for the year ahead.",
-    cta: "REGISTER FREE",
-    color: "#c0613a",
-    featured: false,
-  },
 ];
 
-const pastEvents = [
+const fallbackPast = [
   {
     title: "25th Anniversary Celebration",
     date: "August 1, 2025",
@@ -77,12 +56,6 @@ const pastEvents = [
     location: "Kano",
     type: "Conference",
   },
-  {
-    title: "Annual Charity Run 2025",
-    date: "April 5, 2025",
-    location: "Lagos",
-    type: "Fundraising",
-  },
 ];
 
 export const metadata = {
@@ -91,7 +64,83 @@ export const metadata = {
     "Find out about FOLMADI Nigeria's upcoming fundraising events, awareness campaigns, and community activities.",
 };
 
-export default function UpcomingEventsPage() {
+interface EventData {
+  title: string;
+  date: string;
+  time: string;
+  location: string;
+  type: string;
+  description: string;
+  cta: string;
+  color: string;
+  featured: boolean;
+}
+
+interface PastEventData {
+  title: string;
+  date: string;
+  location: string;
+  type: string;
+}
+
+async function getEventData(): Promise<{
+  upcoming: EventData[];
+  past: PastEventData[];
+}> {
+  try {
+    const allEvents = await db
+      .select()
+      .from(events)
+      .orderBy(desc(events.eventDate));
+
+    const published = allEvents.filter((e) => e.published === 1);
+    if (published.length === 0) {
+      return {
+        upcoming: fallbackUpcoming,
+        past: fallbackPast,
+      };
+    }
+
+    const now = new Date();
+    const upcoming: EventData[] = [];
+    const past: PastEventData[] = [];
+
+    for (const item of published) {
+      const eventDate = new Date(item.eventDate);
+      if (item.eventDate && eventDate >= now) {
+        upcoming.push({
+          title: item.title,
+          date: item.eventDate,
+          time: item.eventTime || "",
+          location: item.location,
+          type: item.eventType,
+          description: item.description,
+          cta: item.ctaText || "REGISTER",
+          color: item.ctaColor || "#c0613a",
+          featured: item.featured === 1,
+        });
+      } else {
+        past.push({
+          title: item.title,
+          date: item.eventDate,
+          location: item.location,
+          type: item.eventType,
+        });
+      }
+    }
+
+    return {
+      upcoming: upcoming.length > 0 ? upcoming : fallbackUpcoming,
+      past: past.length > 0 ? past : fallbackPast,
+    };
+  } catch {
+    return { upcoming: fallbackUpcoming, past: fallbackPast };
+  }
+}
+
+export default async function UpcomingEventsPage() {
+  const { upcoming: upcomingEvents, past: pastEvents } = await getEventData();
+
   return (
     <PageLayout>
       <PageHero
@@ -133,7 +182,7 @@ export default function UpcomingEventsPage() {
                       marginBottom: "16px",
                     }}
                   >
-                    ⭐ FEATURED EVENT · {event.type}
+                    FEATURED EVENT - {event.type}
                   </span>
                   <h2
                     style={{
@@ -167,24 +216,23 @@ export default function UpcomingEventsPage() {
                     }}
                   >
                     {[
-                      { icon: "📅", text: event.date },
-                      { icon: "🕐", text: event.time },
-                      { icon: "📍", text: event.location },
-                    ].map((item) => (
-                      <span
-                        key={item.text}
-                        style={{
-                          fontFamily: "var(--font-lato)",
-                          fontSize: "0.9rem",
-                          color: "#555",
-                          display: "flex",
-                          gap: "6px",
-                          alignItems: "center",
-                        }}
-                      >
-                        {item.icon} {item.text}
-                      </span>
-                    ))}
+                      { text: event.date },
+                      { text: event.time },
+                      { text: event.location },
+                    ]
+                      .filter((item) => item.text)
+                      .map((item) => (
+                        <span
+                          key={item.text}
+                          style={{
+                            fontFamily: "var(--font-lato)",
+                            fontSize: "0.9rem",
+                            color: "#555",
+                          }}
+                        >
+                          {item.text}
+                        </span>
+                      ))}
                   </div>
                   <button
                     style={{
@@ -246,7 +294,7 @@ export default function UpcomingEventsPage() {
                         lineHeight: 1,
                       }}
                     >
-                      {event.date.split(" ")[1].replace(",", "")}
+                      {event.date.split(" ")[1]?.replace(",", "") || ""}
                     </div>
                     <div
                       style={{
@@ -257,7 +305,7 @@ export default function UpcomingEventsPage() {
                         opacity: 0.9,
                       }}
                     >
-                      {event.date.split(" ")[0]}
+                      {event.date.split(" ")[0] || ""}
                     </div>
                   </div>
 
@@ -295,6 +343,17 @@ export default function UpcomingEventsPage() {
                         flexWrap: "wrap",
                       }}
                     >
+                      {event.time && (
+                        <span
+                          style={{
+                            fontFamily: "var(--font-lato)",
+                            fontSize: "0.8rem",
+                            color: "#888",
+                          }}
+                        >
+                          {event.time}
+                        </span>
+                      )}
                       <span
                         style={{
                           fontFamily: "var(--font-lato)",
@@ -302,16 +361,7 @@ export default function UpcomingEventsPage() {
                           color: "#888",
                         }}
                       >
-                        🕐 {event.time}
-                      </span>
-                      <span
-                        style={{
-                          fontFamily: "var(--font-lato)",
-                          fontSize: "0.8rem",
-                          color: "#888",
-                        }}
-                      >
-                        📍 {event.location}
+                        {event.location}
                       </span>
                     </div>
                   </div>
@@ -339,64 +389,66 @@ export default function UpcomingEventsPage() {
           </div>
 
           {/* Past events */}
-          <div style={{ marginTop: "60px" }}>
-            <h2 className="section-heading" style={{ marginBottom: "24px" }}>
-              PAST EVENTS
-            </h2>
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
-                gap: "16px",
-              }}
-            >
-              {pastEvents.map((event) => (
-                <div
-                  key={event.title}
-                  style={{
-                    backgroundColor: "#f5f5f5",
-                    padding: "20px 24px",
-                    opacity: 0.7,
-                  }}
-                >
-                  <span
+          {pastEvents.length > 0 && (
+            <div style={{ marginTop: "60px" }}>
+              <h2 className="section-heading" style={{ marginBottom: "24px" }}>
+                PAST EVENTS
+              </h2>
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+                  gap: "16px",
+                }}
+              >
+                {pastEvents.map((event) => (
+                  <div
+                    key={event.title}
                     style={{
-                      fontFamily: "var(--font-oswald)",
-                      fontSize: "0.7rem",
-                      color: "#999",
-                      textTransform: "uppercase",
-                      letterSpacing: "0.08em",
-                      display: "block",
-                      marginBottom: "6px",
+                      backgroundColor: "#f5f5f5",
+                      padding: "20px 24px",
+                      opacity: 0.7,
                     }}
                   >
-                    {event.type} · {event.date}
-                  </span>
-                  <h4
-                    style={{
-                      fontFamily: "var(--font-oswald)",
-                      fontSize: "0.95rem",
-                      fontWeight: 600,
-                      textTransform: "uppercase",
-                      color: "#555",
-                      marginBottom: "4px",
-                    }}
-                  >
-                    {event.title}
-                  </h4>
-                  <p
-                    style={{
-                      fontFamily: "var(--font-lato)",
-                      fontSize: "0.8rem",
-                      color: "#999",
-                    }}
-                  >
-                    📍 {event.location}
-                  </p>
-                </div>
-              ))}
+                    <span
+                      style={{
+                        fontFamily: "var(--font-oswald)",
+                        fontSize: "0.7rem",
+                        color: "#999",
+                        textTransform: "uppercase",
+                        letterSpacing: "0.08em",
+                        display: "block",
+                        marginBottom: "6px",
+                      }}
+                    >
+                      {event.type} - {event.date}
+                    </span>
+                    <h4
+                      style={{
+                        fontFamily: "var(--font-oswald)",
+                        fontSize: "0.95rem",
+                        fontWeight: 600,
+                        textTransform: "uppercase",
+                        color: "#555",
+                        marginBottom: "4px",
+                      }}
+                    >
+                      {event.title}
+                    </h4>
+                    <p
+                      style={{
+                        fontFamily: "var(--font-lato)",
+                        fontSize: "0.8rem",
+                        color: "#999",
+                      }}
+                    >
+                      {event.location}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </section>
     </PageLayout>
