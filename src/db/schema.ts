@@ -7,7 +7,7 @@ export const users = sqliteTable("users", {
   password: text("password").notNull(),
   role: text("role").notNull().default("admin"),
   createdAt: integer("created_at", { mode: "timestamp" }).$defaultFn(
-    () => new Date()
+    () => new Date(),
   ),
 });
 
@@ -22,10 +22,10 @@ export const news = sqliteTable("news", {
   readTime: text("read_time").default("3 min read"),
   published: integer("published").notNull().default(0),
   createdAt: integer("created_at", { mode: "timestamp" }).$defaultFn(
-    () => new Date()
+    () => new Date(),
   ),
   updatedAt: integer("updated_at", { mode: "timestamp" }).$defaultFn(
-    () => new Date()
+    () => new Date(),
   ),
 });
 
@@ -42,10 +42,10 @@ export const blogs = sqliteTable("blogs", {
   readTime: text("read_time").default("5 min read"),
   published: integer("published").notNull().default(0),
   createdAt: integer("created_at", { mode: "timestamp" }).$defaultFn(
-    () => new Date()
+    () => new Date(),
   ),
   updatedAt: integer("updated_at", { mode: "timestamp" }).$defaultFn(
-    () => new Date()
+    () => new Date(),
   ),
 });
 
@@ -64,10 +64,10 @@ export const events = sqliteTable("events", {
   featured: integer("featured").notNull().default(0),
   published: integer("published").notNull().default(0),
   createdAt: integer("created_at", { mode: "timestamp" }).$defaultFn(
-    () => new Date()
+    () => new Date(),
   ),
   updatedAt: integer("updated_at", { mode: "timestamp" }).$defaultFn(
-    () => new Date()
+    () => new Date(),
   ),
 });
 
@@ -80,6 +80,6 @@ export const files = sqliteTable("files", {
   path: text("path").notNull(),
   uploadedBy: integer("uploaded_by").references(() => users.id),
   createdAt: integer("created_at", { mode: "timestamp" }).$defaultFn(
-    () => new Date()
+    () => new Date(),
   ),
 });
