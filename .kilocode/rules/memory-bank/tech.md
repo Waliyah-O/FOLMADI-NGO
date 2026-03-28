@@ -1,14 +1,20 @@
-# Technical Context: Next.js Starter Template
+# Technical Context: FOLMADI Nigeria Website
 
 ## Technology Stack
 
-| Technology   | Version | Purpose                         |
-| ------------ | ------- | ------------------------------- |
-| Next.js      | 16.x    | React framework with App Router |
-| React        | 19.x    | UI library                      |
-| TypeScript   | 5.9.x   | Type-safe JavaScript            |
-| Tailwind CSS | 4.x     | Utility-first CSS               |
-| Bun          | Latest  | Package manager & runtime       |
+| Technology            | Version | Purpose                         |
+| --------------------- | ------- | ------------------------------- |
+| Next.js               | 16.x    | React framework with App Router |
+| React                 | 19.x    | UI library                      |
+| TypeScript            | 5.9.x   | Type-safe JavaScript            |
+| Tailwind CSS          | 4.x     | Utility-first CSS               |
+| Drizzle ORM           | 0.45.x  | Database ORM (SQLite)           |
+| @kilocode/app-builder-db | latest | SQLite database driver          |
+| bcryptjs              | 3.x     | Password hashing                |
+| jsonwebtoken          | 9.x     | JWT authentication              |
+| lucide-react          | 0.575.x | Icon library                    |
+| clsx                  | 2.x     | Class name utility              |
+| Bun                   | Latest  | Package manager & runtime       |
 
 ## Development Environment
 
@@ -21,123 +27,114 @@
 
 ```bash
 bun install        # Install dependencies
-bun dev            # Start dev server (http://localhost:3000)
 bun build          # Production build
-bun start          # Start production server
 bun lint           # Run ESLint
 bun typecheck      # Run TypeScript type checking
+bun db:generate    # Generate database migrations
+bun db:migrate     # Run migrations (sandbox only)
 ```
+
+**Never run `bun dev`** — the sandbox handles this automatically.
+
+## Database
+
+### Schema Tables
+
+- **users** — Admin accounts (id, name, email, password, role, createdAt)
+- **news** — News articles (id, title, slug, excerpt, content, category, imageUrl, readTime, published, timestamps)
+- **blogs** — Blog posts (id, title, slug, excerpt, content, authorName, authorRole, imageUrl, tags, readTime, published, timestamps)
+- **events** — Events (id, title, slug, description, eventDate, eventTime, location, eventType, imageUrl, ctaText, ctaColor, featured, published, timestamps)
+- **files** — Uploaded files (id, filename, originalName, mimeType, size, path, uploadedBy, createdAt)
+
+### Migration Files
+
+```
+src/db/
+├── schema.ts        # Table definitions
+├── index.ts         # Database client
+├── migrate.ts       # Migration runner
+└── migrations/      # Generated SQL migrations
+```
+
+## Authentication
+
+- JWT tokens stored in HTTP-only cookies
+- bcrypt password hashing (10 rounds)
+- Token expiry: 24 hours
+- Cookie name: `admin_token`
+- **Auth library**: `src/lib/auth.ts`
+
+## File Uploads
+
+- Stored in `public/uploads/`
+- Unique filenames generated (timestamp + random string)
+- Metadata tracked in `files` database table
+- Max size: browser default (no server-side limit configured)
 
 ## Project Configuration
 
 ### Next.js Config (`next.config.ts`)
-
 - App Router enabled
-- Default settings for flexibility
+- Default settings
 
 ### TypeScript Config (`tsconfig.json`)
-
 - Strict mode enabled
 - Path alias: `@/*` → `src/*`
 - Target: ESNext
 
 ### Tailwind CSS 4 (`postcss.config.mjs`)
-
 - Uses `@tailwindcss/postcss` plugin
 - CSS-first configuration (v4 style)
 
 ### ESLint (`eslint.config.mjs`)
-
 - Uses `eslint-config-next`
 - Flat config format
 
-## Key Dependencies
-
-### Production Dependencies
-
-```json
-{
-  "next": "^16.1.3", // Framework
-  "react": "^19.2.3", // UI library
-  "react-dom": "^19.2.3" // React DOM
-}
-```
-
-### Dev Dependencies
-
-```json
-{
-  "typescript": "^5.9.3",
-  "@types/node": "^24.10.2",
-  "@types/react": "^19.2.7",
-  "@types/react-dom": "^19.2.3",
-  "@tailwindcss/postcss": "^4.1.17",
-  "tailwindcss": "^4.1.17",
-  "eslint": "^9.39.1",
-  "eslint-config-next": "^16.0.0"
-}
-```
+### Drizzle (`drizzle.config.ts`)
+- SQLite dialect
+- Schema: `./src/db/schema.ts`
+- Migrations output: `./src/db/migrations`
 
 ## File Structure
 
 ```
 /
-├── .gitignore              # Git ignore rules
-├── package.json            # Dependencies and scripts
-├── bun.lock                # Bun lockfile
-├── next.config.ts          # Next.js configuration
-├── tsconfig.json           # TypeScript configuration
-├── postcss.config.mjs      # PostCSS (Tailwind) config
-├── eslint.config.mjs       # ESLint configuration
-├── public/                 # Static assets
-│   └── .gitkeep
-└── src/                    # Source code
-    └── app/                # Next.js App Router
-        ├── layout.tsx      # Root layout
-        ├── page.tsx        # Home page
-        ├── globals.css     # Global styles
-        └── favicon.ico     # Site icon
+├── drizzle.config.ts       # Drizzle ORM config
+├── package.json
+├── public/
+│   └── uploads/            # User-uploaded files
+├── src/
+│   ├── app/
+│   │   ├── admin/          # Admin CMS pages
+│   │   │   ├── layout.tsx  # Admin sidebar layout
+│   │   │   ├── login/      # Admin login
+│   │   │   ├── dashboard/  # Admin dashboard
+│   │   │   ├── news/       # News management
+│   │   │   ├── blogs/      # Blog management
+│   │   │   ├── events/     # Event management
+│   │   │   └── files/      # File manager
+│   │   ├── api/            # API routes
+│   │   │   ├── auth/       # Login/logout/seed
+│   │   │   ├── news/       # News CRUD
+│   │   │   ├── blogs/      # Blogs CRUD
+│   │   │   ├── events/     # Events CRUD
+│   │   │   └── files/      # Files upload/delete
+│   │   ├── news-and-events/ # Public content pages
+│   │   └── ...             # Other public pages
+│   ├── components/         # Shared components
+│   ├── db/                 # Database (schema, client, migrations)
+│   └── lib/                # Utilities (auth, helpers)
 ```
 
-## Technical Constraints
+## Environment Variables
 
-### Starting Point
+| Variable    | Purpose            | Default                        |
+| ----------- | ------------------ | ------------------------------ |
+| JWT_SECRET  | JWT signing secret | `folmadi-secret-key-...`       |
+| DB_URL      | Database URL       | Provided by sandbox            |
+| DB_TOKEN    | Database token     | Provided by sandbox            |
 
-- Minimal structure - expand as needed
-- No database by default (use recipe to add)
-- No authentication by default (add when needed)
-
-### Browser Support
+## Browser Support
 
 - Modern browsers (ES2020+)
 - No IE11 support
-
-## Performance Considerations
-
-### Image Optimization
-
-- Use Next.js `Image` component for optimization
-- Place images in `public/` directory
-
-### Bundle Size
-
-- Tree-shaking enabled by default
-- Tailwind CSS purges unused styles
-
-### Core Web Vitals
-
-- Server Components reduce client JavaScript
-- Streaming and Suspense for better UX
-
-## Deployment
-
-### Build Output
-
-- Server-rendered pages by default
-- Can be configured for static export
-
-### Environment Variables
-
-- None required for base template
-- Add as needed for features
-- Use `.env.local` for local development

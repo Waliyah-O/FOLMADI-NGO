@@ -1,10 +1,10 @@
-# Active Context: Next.js Starter Template
+# Active Context: FOLMADI Nigeria Website with Admin CMS
 
 ## Current State
 
-**Template Status**: ✅ Ready for development
+**Status**: Full-featured NGO website with admin content management system
 
-The template is a clean Next.js 16 starter with TypeScript and Tailwind CSS 4. It's ready for AI-assisted expansion to build any type of application.
+The project is a FOLMADI Nigeria website built with Next.js 16, featuring a complete admin CMS for managing news, blogs, events, and file uploads.
 
 ## Recently Completed
 
@@ -16,83 +16,64 @@ The template is a clean Next.js 16 starter with TypeScript and Tailwind CSS 4. I
 - [x] Recipe system for common features
 - [x] Custom 404 not-found page (`src/app/not-found.tsx`)
 - [x] Installed missing `clsx` dependency
+- [x] Database setup (Drizzle ORM + SQLite via `@kilocode/app-builder-db`)
+- [x] User authentication (JWT + bcrypt, HTTP-only cookies)
+- [x] Admin CMS panel with sidebar navigation
+- [x] News management (CRUD + publish/unpublish)
+- [x] Blog management (CRUD + publish/unpublish)
+- [x] Events management (CRUD + publish/unpublish + featured toggle)
+- [x] File upload manager (upload, copy path, delete)
+- [x] Frontend pages updated to read from database with fallback content
+
+## Database Schema
+
+| Table  | Purpose                    | Key Fields                                                       |
+| ------ | -------------------------- | ---------------------------------------------------------------- |
+| users  | Admin accounts             | id, name, email, password (bcrypt), role, createdAt              |
+| news   | News articles              | id, title, slug, excerpt, content, category, imageUrl, published |
+| blogs  | Blog posts                 | id, title, slug, excerpt, content, authorName, authorRole, tags, published |
+| events | Upcoming/past events       | id, title, slug, description, eventDate, eventTime, location, eventType, featured, published |
+| files  | Uploaded file metadata     | id, filename, originalName, mimeType, size, path, uploadedBy     |
+
+## Admin Access
+
+- **Login URL**: `/admin/login`
+- **Default credentials**: `admin@folmadi.org` / `admin123`
+- **Seed endpoint**: POST `/api/auth/seed` (creates first admin user)
+
+## API Routes
+
+| Route                   | Methods           | Auth Required |
+| ----------------------- | ----------------- | ------------- |
+| `/api/auth/login`       | POST              | No            |
+| `/api/auth/logout`      | POST              | No            |
+| `/api/auth/seed`        | POST              | No            |
+| `/api/news`             | GET, POST, PUT, DEL | Write ops require auth |
+| `/api/blogs`            | GET, POST, PUT, DEL | Write ops require auth |
+| `/api/events`           | GET, POST, PUT, DEL | Write ops require auth |
+| `/api/files`            | GET, POST, DEL    | Yes           |
 
 ## Current Structure
 
-| File/Directory        | Purpose              | Status   |
-| --------------------- | -------------------- | -------- |
-| `src/app/page.tsx`    | Home page            | ✅ Ready |
-| `src/app/layout.tsx`  | Root layout          | ✅ Ready |
-| `src/app/globals.css` | Global styles        | ✅ Ready |
-| `.kilocode/`          | AI context & recipes | ✅ Ready |
-
-## Current Focus
-
-The template is ready. Next steps depend on user requirements:
-
-1. What type of application to build
-2. What features are needed
-3. Design/branding preferences
-
-## Quick Start Guide
-
-### To add a new page:
-
-Create a file at `src/app/[route]/page.tsx`:
-
-```tsx
-export default function NewPage() {
-  return <div>New page content</div>;
-}
-```
-
-### To add components:
-
-Create `src/components/` directory and add components:
-
-```tsx
-// src/components/ui/Button.tsx
-export function Button({ children }: { children: React.ReactNode }) {
-  return (
-    <button className="px-4 py-2 bg-blue-600 text-white rounded">
-      {children}
-    </button>
-  );
-}
-```
-
-### To add a database:
-
-Follow `.kilocode/recipes/add-database.md`
-
-### To add API routes:
-
-Create `src/app/api/[route]/route.ts`:
-
-```tsx
-import { NextResponse } from "next/server";
-
-export async function GET() {
-  return NextResponse.json({ message: "Hello" });
-}
-```
-
-## Available Recipes
-
-| Recipe       | File                                | Use Case                               |
-| ------------ | ----------------------------------- | -------------------------------------- |
-| Add Database | `.kilocode/recipes/add-database.md` | Data persistence with Drizzle + SQLite |
-
-## Pending Improvements
-
-- [ ] Add more recipes (auth, email, etc.)
-- [ ] Add example components
-- [ ] Add testing setup recipe
+| File/Directory                 | Purpose                    | Status   |
+| ------------------------------ | -------------------------- | -------- |
+| `src/app/page.tsx`             | Home page                  | ✅ Ready |
+| `src/app/layout.tsx`           | Root layout                | ✅ Ready |
+| `src/app/globals.css`          | Global styles              | ✅ Ready |
+| `src/db/schema.ts`             | Database tables            | ✅ Ready |
+| `src/db/index.ts`              | Database client            | ✅ Ready |
+| `src/lib/auth.ts`              | Auth helpers (JWT/bcrypt)  | ✅ Ready |
+| `src/lib/utils.ts`             | Slug/format utilities      | ✅ Ready |
+| `src/app/admin/`               | Admin CMS (7 pages)        | ✅ Ready |
+| `src/app/api/`                 | API routes (7 endpoints)   | ✅ Ready |
+| `src/app/news-and-events/`     | Frontend content pages     | ✅ DB-connected |
+| `.kilocode/`                   | AI context & recipes       | ✅ Ready |
 
 ## Session History
 
-| Date       | Changes                                                                                                                                                                                   |
-| ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Initial    | Template created with base setup                                                                                                                                                          |
-| 2026-03-01 | Cloned FOLMADI Nigeria homepage (folmadi.com.ng) — added Header, HeroBanner, HowWeHelpChildren, ImpactStats, HowYouCanHelp, NewsletterSection, Footer components with brand colors (terracotta #c0613a), Oswald + Lato + Nunito fonts |
-| 2026-03-28 | Added custom 404 not-found page with branded hero, 404 watermark, quick navigation cards (Home, What We Do, Get Involved, News & Events), and contact CTA. Installed missing `clsx` dependency. |
+| Date       | Changes |
+| ---------- | ------- |
+| Initial    | Template created with base setup |
+| 2026-03-01 | Cloned FOLMADI Nigeria homepage — Header, HeroBanner, ImpactStats, Footer, brand colors (terracotta #c0613a), Oswald + Lato + Nunito fonts |
+| 2026-03-28 | Added custom 404 not-found page. Installed `clsx`. |
+| 2026-03-28 | Full admin CMS: Drizzle + SQLite database, JWT auth (bcrypt), admin panel with news/blogs/events/file management, API CRUD routes, frontend pages connected to DB with fallback content |
