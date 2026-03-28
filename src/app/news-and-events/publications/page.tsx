@@ -10,7 +10,7 @@ const publications = [
       "Our comprehensive annual report covering programme outcomes, financial performance, and strategic highlights for 2025.",
     pages: "64 pages",
     size: "4.2 MB",
-    color: "#e2001a",
+    color: "#c0613a",
   },
   {
     title: "Child Malnutrition in North-West Nigeria: A Situation Analysis",
@@ -50,7 +50,7 @@ const publications = [
       "An independent evaluation of FOLMADI's emergency response in Borno, Yobe, and Adamawa States, assessing effectiveness, efficiency, and impact.",
     pages: "52 pages",
     size: "3.8 MB",
-    color: "#e2001a",
+    color: "#c0613a",
   },
   {
     title: "Annual Report 2024",
@@ -60,7 +60,7 @@ const publications = [
       "Our comprehensive annual report covering programme outcomes, financial performance, and strategic highlights for 2024.",
     pages: "60 pages",
     size: "3.9 MB",
-    color: "#e2001a",
+    color: "#c0613a",
   },
   {
     title: "Child Protection in Nigeria: Gaps and Opportunities",
@@ -130,8 +130,8 @@ export default function PublicationsPage() {
                   letterSpacing: "0.05em",
                   padding: "8px 16px",
                   border: "1px solid",
-                  borderColor: index === 0 ? "#e2001a" : "#ddd",
-                  backgroundColor: index === 0 ? "#e2001a" : "transparent",
+                  borderColor: index === 0 ? "#c0613a" : "#ddd",
+                  backgroundColor: index === 0 ? "#c0613a" : "transparent",
                   color: index === 0 ? "#fff" : "#666",
                   cursor: "pointer",
                 }}
@@ -142,7 +142,9 @@ export default function PublicationsPage() {
           </div>
 
           {/* Publications list */}
-          <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+          <div
+            style={{ display: "flex", flexDirection: "column", gap: "16px" }}
+          >
             {publications.map((pub) => (
               <div
                 key={pub.title}

@@ -10,7 +10,7 @@ const ways = [
     href: "/donate",
     cta: "DONATE NOW",
     icon: "💝",
-    color: "#e2001a",
+    color: "#c0613a",
   },
   {
     title: "Become a Volunteer",
@@ -42,15 +42,30 @@ const ways = [
 ];
 
 const impact = [
-  { amount: "₦5,000", impact: "provides school supplies for one child for a year" },
-  { amount: "₦15,000", impact: "funds a month of nutritional support for a malnourished child" },
-  { amount: "₦50,000", impact: "trains a community health worker in child health and nutrition" },
-  { amount: "₦100,000", impact: "supports a child protection committee for three months" },
-  { amount: "₦500,000", impact: "establishes a temporary learning space for 50 children in crisis" },
+  {
+    amount: "₦5,000",
+    impact: "provides school supplies for one child for a year",
+  },
+  {
+    amount: "₦15,000",
+    impact: "funds a month of nutritional support for a malnourished child",
+  },
+  {
+    amount: "₦50,000",
+    impact: "trains a community health worker in child health and nutrition",
+  },
+  {
+    amount: "₦100,000",
+    impact: "supports a child protection committee for three months",
+  },
+  {
+    amount: "₦500,000",
+    impact: "establishes a temporary learning space for 50 children in crisis",
+  },
 ];
 
 export const metadata = {
-  title: "Help Us Change the Lives of Children | FOLMADI Nigeria",
+  title: "Help Us Change Lives | FOLMADI Nigeria",
   description:
     "Find out how you can help FOLMADI Nigeria change the lives of children through donations, volunteering, and partnerships.",
 };
@@ -59,7 +74,7 @@ export default function HelpUsChangeLivesPage() {
   return (
     <PageLayout>
       <PageHero
-        title="Help Us Change the Lives of Children"
+        title="Help Us Change Lives"
         subtitle="Every child deserves a future. Together, we can make that a reality. Here's how you can support our work."
       />
 
@@ -184,7 +199,7 @@ export default function HelpUsChangeLivesPage() {
               >
                 <div
                   style={{
-                    backgroundColor: "#e2001a",
+                    backgroundColor: "#c0613a",
                     padding: "20px 24px",
                     minWidth: "140px",
                     display: "flex",
@@ -229,7 +244,7 @@ export default function HelpUsChangeLivesPage() {
             <Link
               href="/donate"
               style={{
-                backgroundColor: "#e2001a",
+                backgroundColor: "#c0613a",
                 color: "#fff",
                 fontFamily: "var(--font-oswald)",
                 fontWeight: 700,

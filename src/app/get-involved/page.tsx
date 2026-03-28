@@ -30,7 +30,7 @@ export default function GetInvolvedPage() {
               style={{
                 backgroundColor: "#f9f9f9",
                 padding: "48px",
-                borderTop: "6px solid #e2001a",
+                borderTop: "6px solid #c0613a",
                 display: "flex",
                 flexDirection: "column",
               }}
@@ -84,7 +84,7 @@ export default function GetInvolvedPage() {
                       marginBottom: "10px",
                     }}
                   >
-                    <span style={{ color: "#e2001a", fontWeight: 700 }}>✓</span>
+                    <span style={{ color: "#c0613a", fontWeight: 700 }}>✓</span>
                     <span
                       style={{
                         fontFamily: "var(--font-lato)",
@@ -100,7 +100,7 @@ export default function GetInvolvedPage() {
               <Link
                 href="/get-involved/if-you-are-a-person"
                 style={{
-                  backgroundColor: "#e2001a",
+                  backgroundColor: "#c0613a",
                   color: "#fff",
                   fontFamily: "var(--font-oswald)",
                   fontWeight: 700,
@@ -214,7 +214,7 @@ export default function GetInvolvedPage() {
       <section
         style={{
           padding: "60px 0",
-          backgroundColor: "#e2001a",
+          backgroundColor: "#c0613a",
           textAlign: "center",
         }}
       >
@@ -249,7 +249,7 @@ export default function GetInvolvedPage() {
             href="/donate"
             style={{
               backgroundColor: "#fff",
-              color: "#e2001a",
+              color: "#c0613a",
               fontFamily: "var(--font-oswald)",
               fontWeight: 700,
               textTransform: "uppercase",

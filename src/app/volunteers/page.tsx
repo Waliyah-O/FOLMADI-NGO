@@ -23,8 +23,10 @@ const initialPosts: MediaPost[] = [
     id: "1",
     author: "Amara Johnson",
     authorRole: "Education Volunteer, Lagos",
-    content: "Today we distributed learning materials to over 50 children at the Lagos community center. Their smiles made every effort worthwhile! 📚✨",
-    mediaUrl: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800",
+    content:
+      "Today we distributed learning materials to over 50 children at the Lagos community center. Their smiles made every effort worthwhile! 📚✨",
+    mediaUrl:
+      "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800",
     mediaType: "image",
     likes: 24,
     comments: 5,
@@ -34,8 +36,10 @@ const initialPosts: MediaPost[] = [
     id: "2",
     author: "Chukwuemeka Okonkwo",
     authorRole: "Health Programme Volunteer, Kano",
-    content: "Our nutrition workshop was a huge success! Mothers learned about balanced diets and child health.下一个🌟",
-    mediaUrl: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800",
+    content:
+      "Our nutrition workshop was a huge success! Mothers learned about balanced diets and child health.下一个🌟",
+    mediaUrl:
+      "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800",
     mediaType: "image",
     likes: 18,
     comments: 3,
@@ -45,8 +49,10 @@ const initialPosts: MediaPost[] = [
     id: "3",
     author: "Fatima Abubakar",
     authorRole: "Child Protection Volunteer, Abuja",
-    content: "Volunteering with FOLMADI has been life-changing. Here's a glimpse of our community awareness session yesterday.",
-    mediaUrl: "https://images.unsplash.com/photo-1577896851231-70ef18881754?w=800",
+    content:
+      "Volunteering with FOLMADI has been life-changing. Here's a glimpse of our community awareness session yesterday.",
+    mediaUrl:
+      "https://images.unsplash.com/photo-1577896851231-70ef18881754?w=800",
     mediaType: "image",
     likes: 31,
     comments: 8,
@@ -85,7 +91,9 @@ export default function VolunteersPage() {
         author: "You",
         authorRole: "FOLMADI Volunteer",
         content: newPost || "Shared a moment from the field!",
-        mediaUrl: previewUrl || "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800",
+        mediaUrl:
+          previewUrl ||
+          "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800",
         mediaType: selectedFile?.type.startsWith("video") ? "video" : "image",
         likes: 0,
         comments: 0,
@@ -126,12 +134,35 @@ export default function VolunteersPage() {
       {/* Main content */}
       <section style={{ padding: "40px 0", backgroundColor: "#f5f5f5" }}>
         <div className="container">
-          <div style={{ display: "grid", gridTemplateColumns: "280px 1fr", gap: "24px" }}>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "280px 1fr",
+              gap: "24px",
+            }}
+          >
             {/* Sidebar */}
-            <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+            <div
+              style={{ display: "flex", flexDirection: "column", gap: "16px" }}
+            >
               {/* Create post card */}
-              <div style={{ backgroundColor: "#fff", padding: "20px", borderRadius: "0" }}>
-                <h3 style={{ fontFamily: "var(--font-oswald)", fontSize: "1rem", fontWeight: 600, textTransform: "uppercase", color: "#333", marginBottom: "16px" }}>
+              <div
+                style={{
+                  backgroundColor: "#fff",
+                  padding: "20px",
+                  borderRadius: "0",
+                }}
+              >
+                <h3
+                  style={{
+                    fontFamily: "var(--font-oswald)",
+                    fontSize: "1rem",
+                    fontWeight: 600,
+                    textTransform: "uppercase",
+                    color: "#333",
+                    marginBottom: "16px",
+                  }}
+                >
                   Share Your Story
                 </h3>
                 <form onSubmit={handleSubmit}>
@@ -152,18 +183,40 @@ export default function VolunteersPage() {
                       marginBottom: "12px",
                     }}
                   />
-                  
+
                   {/* File preview */}
                   {previewUrl && (
                     <div style={{ position: "relative", marginBottom: "12px" }}>
                       {selectedFile?.type.startsWith("video") ? (
-                        <video src={previewUrl} style={{ width: "100%", maxHeight: "200px", objectFit: "cover" }} />
+                        <video
+                          src={previewUrl}
+                          style={{
+                            width: "100%",
+                            maxHeight: "200px",
+                            objectFit: "cover",
+                          }}
+                        />
                       ) : (
-                        <Image src={previewUrl} alt="Preview" width={400} height={200} style={{ width: "100%", height: "auto", maxHeight: "200px", objectFit: "cover" }} unoptimized />
+                        <Image
+                          src={previewUrl}
+                          alt="Preview"
+                          width={400}
+                          height={200}
+                          style={{
+                            width: "100%",
+                            height: "auto",
+                            maxHeight: "200px",
+                            objectFit: "cover",
+                          }}
+                          unoptimized
+                        />
                       )}
                       <button
                         type="button"
-                        onClick={() => { setSelectedFile(null); setPreviewUrl(null); }}
+                        onClick={() => {
+                          setSelectedFile(null);
+                          setPreviewUrl(null);
+                        }}
                         style={{
                           position: "absolute",
                           top: "8px",
@@ -183,7 +236,13 @@ export default function VolunteersPage() {
                     </div>
                   )}
 
-                  <div style={{ display: "flex", gap: "8px", alignItems: "center" }}>
+                  <div
+                    style={{
+                      display: "flex",
+                      gap: "8px",
+                      alignItems: "center",
+                    }}
+                  >
                     <input
                       ref={fileInputRef}
                       type="file"
@@ -205,7 +264,9 @@ export default function VolunteersPage() {
                     </label>
                     <button
                       type="submit"
-                      disabled={isUploading || (!newPost.trim() && !selectedFile)}
+                      disabled={
+                        isUploading || (!newPost.trim() && !selectedFile)
+                      }
                       style={{
                         flex: 1,
                         backgroundColor: isUploading ? "#ccc" : "#00a651",
@@ -228,7 +289,16 @@ export default function VolunteersPage() {
 
               {/* Stats card */}
               <div style={{ backgroundColor: "#fff", padding: "20px" }}>
-                <h3 style={{ fontFamily: "var(--font-oswald)", fontSize: "1rem", fontWeight: 600, textTransform: "uppercase", color: "#333", marginBottom: "16px" }}>
+                <h3
+                  style={{
+                    fontFamily: "var(--font-oswald)",
+                    fontSize: "1rem",
+                    fontWeight: 600,
+                    textTransform: "uppercase",
+                    color: "#333",
+                    marginBottom: "16px",
+                  }}
+                >
                   Community Stats
                 </h3>
                 {[
@@ -236,20 +306,57 @@ export default function VolunteersPage() {
                   { label: "States Active", value: "36" },
                   { label: "Posts This Month", value: "150+" },
                 ].map((stat) => (
-                  <div key={stat.label} style={{ display: "flex", justifyContent: "space-between", padding: "8px 0", borderBottom: "1px solid #eee" }}>
-                    <span style={{ fontFamily: "var(--font-lato)", fontSize: "0.85rem", color: "#666" }}>{stat.label}</span>
-                    <span style={{ fontFamily: "var(--font-oswald)", fontSize: "0.9rem", fontWeight: 600, color: "#00a651" }}>{stat.value}</span>
+                  <div
+                    key={stat.label}
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      padding: "8px 0",
+                      borderBottom: "1px solid #eee",
+                    }}
+                  >
+                    <span
+                      style={{
+                        fontFamily: "var(--font-lato)",
+                        fontSize: "0.85rem",
+                        color: "#666",
+                      }}
+                    >
+                      {stat.label}
+                    </span>
+                    <span
+                      style={{
+                        fontFamily: "var(--font-oswald)",
+                        fontSize: "0.9rem",
+                        fontWeight: 600,
+                        color: "#00a651",
+                      }}
+                    >
+                      {stat.value}
+                    </span>
                   </div>
                 ))}
               </div>
 
               {/* Quick links */}
               <div style={{ backgroundColor: "#fff", padding: "20px" }}>
-                <h3 style={{ fontFamily: "var(--font-oswald)", fontSize: "1rem", fontWeight: 600, textTransform: "uppercase", color: "#333", marginBottom: "16px" }}>
+                <h3
+                  style={{
+                    fontFamily: "var(--font-oswald)",
+                    fontSize: "1rem",
+                    fontWeight: 600,
+                    textTransform: "uppercase",
+                    color: "#333",
+                    marginBottom: "16px",
+                  }}
+                >
                   Quick Links
                 </h3>
                 {[
-                  { label: "🎓 Volunteer Training", href: "/get-involved/if-you-are-a-person" },
+                  {
+                    label: "🎓 Volunteer Training",
+                    href: "/get-involved/if-you-are-a-person",
+                  },
                   { label: "📋 Volunteer Handbook", href: "#" },
                   { label: "💬 Community Guidelines", href: "#" },
                 ].map((link) => (
@@ -275,8 +382,23 @@ export default function VolunteersPage() {
             {/* Main feed */}
             <div>
               {/* View toggle */}
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "20px" }}>
-                <h2 style={{ fontFamily: "var(--font-oswald)", fontSize: "1.3rem", fontWeight: 600, textTransform: "uppercase", color: "#333" }}>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  marginBottom: "20px",
+                }}
+              >
+                <h2
+                  style={{
+                    fontFamily: "var(--font-oswald)",
+                    fontSize: "1.3rem",
+                    fontWeight: 600,
+                    textTransform: "uppercase",
+                    color: "#333",
+                  }}
+                >
                   Latest Posts
                 </h2>
                 <div style={{ display: "flex", gap: "8px" }}>
@@ -317,41 +439,168 @@ export default function VolunteersPage() {
 
               {viewMode === "feed" ? (
                 // Feed view
-                <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "16px",
+                  }}
+                >
                   {posts.map((post) => (
-                    <div key={post.id} style={{ backgroundColor: "#fff", borderRadius: "0" }}>
+                    <div
+                      key={post.id}
+                      style={{ backgroundColor: "#fff", borderRadius: "0" }}
+                    >
                       {/* Post header */}
-                      <div style={{ padding: "16px 20px", display: "flex", gap: "12px", alignItems: "center" }}>
-                        <div style={{ width: "48px", height: "48px", borderRadius: "50%", backgroundColor: "#00a651", display: "flex", alignItems: "center", justifyContent: "center", color: "#fff", fontFamily: "var(--font-oswald)", fontWeight: 700, fontSize: "1.1rem" }}>
-                          {post.author.split(" ").map((n) => n[0]).join("")}
+                      <div
+                        style={{
+                          padding: "16px 20px",
+                          display: "flex",
+                          gap: "12px",
+                          alignItems: "center",
+                        }}
+                      >
+                        <div
+                          style={{
+                            width: "48px",
+                            height: "48px",
+                            borderRadius: "50%",
+                            backgroundColor: "#00a651",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            color: "#fff",
+                            fontFamily: "var(--font-oswald)",
+                            fontWeight: 700,
+                            fontSize: "1.1rem",
+                          }}
+                        >
+                          {post.author
+                            .split(" ")
+                            .map((n) => n[0])
+                            .join("")}
                         </div>
                         <div>
-                          <div style={{ fontFamily: "var(--font-oswald)", fontSize: "0.95rem", fontWeight: 600, color: "#333" }}>{post.author}</div>
-                          <div style={{ fontFamily: "var(--font-lato)", fontSize: "0.75rem", color: "#888" }}>{post.authorRole} · {formatTimeAgo(post.timestamp, now)}</div>
+                          <div
+                            style={{
+                              fontFamily: "var(--font-oswald)",
+                              fontSize: "0.95rem",
+                              fontWeight: 600,
+                              color: "#333",
+                            }}
+                          >
+                            {post.author}
+                          </div>
+                          <div
+                            style={{
+                              fontFamily: "var(--font-lato)",
+                              fontSize: "0.75rem",
+                              color: "#888",
+                            }}
+                          >
+                            {post.authorRole} ·{" "}
+                            {formatTimeAgo(post.timestamp, now)}
+                          </div>
                         </div>
                       </div>
 
                       {/* Post content */}
                       <div style={{ padding: "0 20px 16px" }}>
-                        <p style={{ fontFamily: "var(--font-lato)", fontSize: "0.95rem", color: "#555", lineHeight: 1.6, marginBottom: "12px" }}>{post.content}</p>
+                        <p
+                          style={{
+                            fontFamily: "var(--font-lato)",
+                            fontSize: "0.95rem",
+                            color: "#555",
+                            lineHeight: 1.6,
+                            marginBottom: "12px",
+                          }}
+                        >
+                          {post.content}
+                        </p>
                       </div>
 
                       {/* Media */}
                       {post.mediaType === "video" ? (
-                        <video src={post.mediaUrl} style={{ width: "100%", maxHeight: "400px", objectFit: "cover", backgroundColor: "#000" }} controls />
+                        <video
+                          src={post.mediaUrl}
+                          style={{
+                            width: "100%",
+                            maxHeight: "400px",
+                            objectFit: "cover",
+                            backgroundColor: "#000",
+                          }}
+                          controls
+                        />
                       ) : (
-                        <Image src={post.mediaUrl} alt="Post media" width={800} height={400} style={{ width: "100%", height: "auto", maxHeight: "400px", objectFit: "cover" }} unoptimized />
+                        <Image
+                          src={post.mediaUrl}
+                          alt="Post media"
+                          width={800}
+                          height={400}
+                          style={{
+                            width: "100%",
+                            height: "auto",
+                            maxHeight: "400px",
+                            objectFit: "cover",
+                          }}
+                          unoptimized
+                        />
                       )}
 
                       {/* Post actions */}
-                      <div style={{ padding: "12px 20px", display: "flex", gap: "24px", borderTop: "1px solid #f0f0f0" }}>
-                        <button style={{ background: "none", border: "none", cursor: "pointer", display: "flex", alignItems: "center", gap: "6px", fontFamily: "var(--font-lato)", fontSize: "0.85rem", color: "#666" }}>
-                          <span style={{ fontSize: "1.1rem" }}>❤️</span> {post.likes}
+                      <div
+                        style={{
+                          padding: "12px 20px",
+                          display: "flex",
+                          gap: "24px",
+                          borderTop: "1px solid #f0f0f0",
+                        }}
+                      >
+                        <button
+                          style={{
+                            background: "none",
+                            border: "none",
+                            cursor: "pointer",
+                            display: "flex",
+                            alignItems: "center",
+                            gap: "6px",
+                            fontFamily: "var(--font-lato)",
+                            fontSize: "0.85rem",
+                            color: "#666",
+                          }}
+                        >
+                          <span style={{ fontSize: "1.1rem" }}>❤️</span>{" "}
+                          {post.likes}
                         </button>
-                        <button style={{ background: "none", border: "none", cursor: "pointer", display: "flex", alignItems: "center", gap: "6px", fontFamily: "var(--font-lato)", fontSize: "0.85rem", color: "#666" }}>
-                          <span style={{ fontSize: "1.1rem" }}>💬</span> {post.comments}
+                        <button
+                          style={{
+                            background: "none",
+                            border: "none",
+                            cursor: "pointer",
+                            display: "flex",
+                            alignItems: "center",
+                            gap: "6px",
+                            fontFamily: "var(--font-lato)",
+                            fontSize: "0.85rem",
+                            color: "#666",
+                          }}
+                        >
+                          <span style={{ fontSize: "1.1rem" }}>💬</span>{" "}
+                          {post.comments}
                         </button>
-                        <button style={{ background: "none", border: "none", cursor: "pointer", display: "flex", alignItems: "center", gap: "6px", fontFamily: "var(--font-lato)", fontSize: "0.85rem", color: "#666" }}>
+                        <button
+                          style={{
+                            background: "none",
+                            border: "none",
+                            cursor: "pointer",
+                            display: "flex",
+                            alignItems: "center",
+                            gap: "6px",
+                            fontFamily: "var(--font-lato)",
+                            fontSize: "0.85rem",
+                            color: "#666",
+                          }}
+                        >
                           <span style={{ fontSize: "1.1rem" }}>🔗</span> Share
                         </button>
                       </div>
@@ -360,17 +609,77 @@ export default function VolunteersPage() {
                 </div>
               ) : (
                 // Grid view
-                <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "8px" }}>
+                <div
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "repeat(3, 1fr)",
+                    gap: "8px",
+                  }}
+                >
                   {posts.map((post) => (
-                    <div key={post.id} style={{ position: "relative", aspectRatio: "1", cursor: "pointer" }}>
+                    <div
+                      key={post.id}
+                      style={{
+                        position: "relative",
+                        aspectRatio: "1",
+                        cursor: "pointer",
+                      }}
+                    >
                       {post.mediaType === "video" ? (
-                        <video src={post.mediaUrl} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                        <video
+                          src={post.mediaUrl}
+                          style={{
+                            width: "100%",
+                            height: "100%",
+                            objectFit: "cover",
+                          }}
+                        />
                       ) : (
-                        <Image src={post.mediaUrl} alt={post.author} fill style={{ width: "100%", height: "100%", objectFit: "cover" }} unoptimized />
+                        <Image
+                          src={post.mediaUrl}
+                          alt={post.author}
+                          fill
+                          style={{
+                            width: "100%",
+                            height: "100%",
+                            objectFit: "cover",
+                          }}
+                          unoptimized
+                        />
                       )}
-                      <div style={{ position: "absolute", inset: 0, backgroundColor: "rgba(0,0,0,0.3)", display: "flex", alignItems: "center", justifyContent: "center", gap: "16px", opacity: 0, transition: "opacity 0.2s" }}>
-                        <span style={{ color: "#fff", fontFamily: "var(--font-oswald)", fontSize: "0.9rem", fontWeight: 600 }}>❤️ {post.likes}</span>
-                        <span style={{ color: "#fff", fontFamily: "var(--font-oswald)", fontSize: "0.9rem", fontWeight: 600 }}>💬 {post.comments}</span>
+                      <div
+                        style={{
+                          position: "absolute",
+                          inset: 0,
+                          backgroundColor: "rgba(0,0,0,0.3)",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          gap: "16px",
+                          opacity: 0,
+                          transition: "opacity 0.2s",
+                        }}
+                      >
+                        <span
+                          style={{
+                            color: "#fff",
+                            fontFamily: "var(--font-oswald)",
+                            fontSize: "0.9rem",
+                            fontWeight: 600,
+                          }}
+                        >
+                          ❤️ {post.likes}
+                        </span>
+                        <span
+                          style={{
+                            color: "#fff",
+                            fontFamily: "var(--font-oswald)",
+                            fontSize: "0.9rem",
+                            fontWeight: 600,
+                          }}
+                        >
+                          💬 {post.comments}
+                        </span>
                       </div>
                     </div>
                   ))}

@@ -167,14 +167,14 @@ export default function AccountabilityPage() {
                   display: "flex",
                   gap: "16px",
                   alignItems: "flex-start",
-                  borderLeft: "4px solid #e2001a",
+                  borderLeft: "4px solid #c0613a",
                 }}
               >
                 <div
                   style={{
                     minWidth: "48px",
                     height: "48px",
-                    backgroundColor: "#e2001a",
+                    backgroundColor: "#c0613a",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
@@ -196,7 +196,7 @@ export default function AccountabilityPage() {
                       style={{
                         fontFamily: "var(--font-oswald)",
                         fontSize: "0.75rem",
-                        color: "#e2001a",
+                        color: "#c0613a",
                         textTransform: "uppercase",
                         letterSpacing: "0.08em",
                       }}
@@ -242,7 +242,7 @@ export default function AccountabilityPage() {
                       fontSize: "0.8rem",
                       fontWeight: 600,
                       textTransform: "uppercase",
-                      color: "#e2001a",
+                      color: "#c0613a",
                       background: "none",
                       border: "none",
                       cursor: "pointer",

@@ -8,7 +8,7 @@ const programmes = [
     description:
       "We work to protect children from violence, abuse, exploitation, and neglect. Our programmes strengthen community-based protection systems and build the capacity of duty bearers.",
     href: "/what-we-do/our-work",
-    color: "#e2001a",
+    color: "#c0613a",
     icon: "🛡️",
     stats: "500K+ children protected",
   },
@@ -44,7 +44,7 @@ const programmes = [
     description:
       "When disaster strikes, we are among the first to respond. We provide emergency education, food, healthcare, and protection to children affected by conflict and natural disasters.",
     href: "/what-we-do/in-times-of-crisis",
-    color: "#e2001a",
+    color: "#c0613a",
     icon: "🚨",
     stats: "45,000+ children reached in emergencies",
   },
@@ -205,7 +205,7 @@ export default function WhatWeDoPage() {
       <section
         style={{
           padding: "60px 0",
-          backgroundColor: "#e2001a",
+          backgroundColor: "#c0613a",
           textAlign: "center",
         }}
       >
@@ -220,7 +220,7 @@ export default function WhatWeDoPage() {
               marginBottom: "16px",
             }}
           >
-            HELP US CHANGE THE LIVES OF CHILDREN
+            HELP US CHANGE THE LIVES
           </h2>
           <p
             style={{
@@ -240,7 +240,7 @@ export default function WhatWeDoPage() {
             href="/donate"
             style={{
               backgroundColor: "#fff",
-              color: "#e2001a",
+              color: "#c0613a",
               fontFamily: "var(--font-oswald)",
               fontWeight: 700,
               textTransform: "uppercase",

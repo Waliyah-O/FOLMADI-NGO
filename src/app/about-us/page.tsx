@@ -10,13 +10,13 @@ const aboutLinks = [
     href: "/about-us/our-history",
     icon: "📖",
   },
-  {
-    title: "Our Successes",
-    description:
-      "Discover the impact we've made — the lives changed, communities strengthened, and milestones achieved.",
-    href: "/about-us/our-successes",
-    icon: "🏆",
-  },
+  // {
+  //   title: "Our Successes",
+  //   description:
+  //     "Discover the impact we've made — the lives changed, communities strengthened, and milestones achieved.",
+  //   href: "/about-us/our-successes",
+  //   icon: "🏆",
+  // },
   {
     title: "Our People",
     description:
@@ -111,7 +111,7 @@ export default function AboutUsPage() {
               style={{
                 backgroundColor: "#f9f9f9",
                 padding: "40px",
-                borderLeft: "4px solid #e2001a",
+                borderLeft: "4px solid #c0613a",
               }}
             >
               <h3
@@ -119,7 +119,7 @@ export default function AboutUsPage() {
                   fontFamily: "var(--font-oswald)",
                   fontSize: "1.4rem",
                   fontWeight: 700,
-                  color: "#e2001a",
+                  color: "#c0613a",
                   textTransform: "uppercase",
                   marginBottom: "24px",
                 }}
@@ -201,7 +201,7 @@ export default function AboutUsPage() {
                   backgroundColor: "#fff",
                   padding: "32px",
                   display: "block",
-                  borderBottom: "4px solid #e2001a",
+                  borderBottom: "4px solid #c0613a",
                   transition: "transform 0.2s, box-shadow 0.2s",
                   textDecoration: "none",
                 }}

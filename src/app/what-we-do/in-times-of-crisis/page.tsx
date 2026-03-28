@@ -10,7 +10,7 @@ const responses = [
     description:
       "The conflict in North-East Nigeria has displaced millions of people, with children bearing the heaviest burden. FOLMADI provides emergency education, child protection, nutrition, and health services to children in displacement camps and host communities.",
     impact: "45,000+ children reached with emergency services",
-    color: "#e2001a",
+    color: "#c0613a",
   },
   {
     title: "Flooding Response",
@@ -82,7 +82,7 @@ export default function InTimesOfCrisisPage() {
     <PageLayout>
       <PageHero
         title="In Times of Crisis"
-        subtitle="When disaster strikes, children are always among the most vulnerable. FOLMADI is among the first to respond, providing life-saving support to children and families in emergencies."
+        subtitle="People are always at their most vulnerable when disaster strikes. FOLMADI is among the first to respond, providing life-saving support to individuals and families in emergencies."
         bgColor="#1a1a1a"
       />
 
@@ -108,7 +108,7 @@ export default function InTimesOfCrisisPage() {
                 style={{
                   padding: "32px",
                   backgroundColor: "#f9f9f9",
-                  borderTop: "4px solid #e2001a",
+                  borderTop: "4px solid #c0613a",
                 }}
               >
                 <div style={{ fontSize: "2.5rem", marginBottom: "16px" }}>
@@ -151,7 +151,9 @@ export default function InTimesOfCrisisPage() {
           >
             CURRENT RESPONSES
           </h2>
-          <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
+          <div
+            style={{ display: "flex", flexDirection: "column", gap: "24px" }}
+          >
             {responses.map((response) => (
               <div
                 key={response.title}
@@ -254,7 +256,7 @@ export default function InTimesOfCrisisPage() {
       <section
         style={{
           padding: "60px 0",
-          backgroundColor: "#e2001a",
+          backgroundColor: "#c0613a",
           textAlign: "center",
         }}
       >
@@ -289,7 +291,7 @@ export default function InTimesOfCrisisPage() {
             href="/donate"
             style={{
               backgroundColor: "#fff",
-              color: "#e2001a",
+              color: "#c0613a",
               fontFamily: "var(--font-oswald)",
               fontWeight: 700,
               textTransform: "uppercase",

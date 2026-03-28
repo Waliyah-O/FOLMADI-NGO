@@ -20,7 +20,8 @@ const newsItems = [
     readTime: "4 min read",
   },
   {
-    title: "World Children's Day: FOLMADI Calls for Greater Investment in Education",
+    title:
+      "World Children's Day: FOLMADI Calls for Greater Investment in Education",
     date: "November 20, 2025",
     category: "Advocacy",
     excerpt:
@@ -36,7 +37,8 @@ const newsItems = [
     readTime: "3 min read",
   },
   {
-    title: "New Report: Child Malnutrition Rates Declining in Target Communities",
+    title:
+      "New Report: Child Malnutrition Rates Declining in Target Communities",
     date: "September 12, 2025",
     category: "Research",
     excerpt:
@@ -99,8 +101,8 @@ export default function NewsPage() {
                   letterSpacing: "0.05em",
                   padding: "8px 16px",
                   border: "1px solid",
-                  borderColor: index === 0 ? "#e2001a" : "#ddd",
-                  backgroundColor: index === 0 ? "#e2001a" : "transparent",
+                  borderColor: index === 0 ? "#c0613a" : "#ddd",
+                  backgroundColor: index === 0 ? "#c0613a" : "transparent",
                   color: index === 0 ? "#fff" : "#666",
                   cursor: "pointer",
                 }}
@@ -123,7 +125,7 @@ export default function NewsPage() {
                 key={item.title}
                 style={{
                   backgroundColor: "#f9f9f9",
-                  borderTop: "4px solid #e2001a",
+                  borderTop: "4px solid #c0613a",
                   padding: "32px",
                   display: "flex",
                   flexDirection: "column",
@@ -141,7 +143,7 @@ export default function NewsPage() {
                     style={{
                       fontFamily: "var(--font-oswald)",
                       fontSize: "0.7rem",
-                      color: "#e2001a",
+                      color: "#c0613a",
                       textTransform: "uppercase",
                       letterSpacing: "0.1em",
                       backgroundColor: "#fff5f5",
@@ -208,7 +210,7 @@ export default function NewsPage() {
                       fontSize: "0.8rem",
                       fontWeight: 600,
                       textTransform: "uppercase",
-                      color: "#e2001a",
+                      color: "#c0613a",
                       letterSpacing: "0.05em",
                     }}
                   >
@@ -229,9 +231,9 @@ export default function NewsPage() {
                 textTransform: "uppercase",
                 letterSpacing: "0.05em",
                 padding: "14px 36px",
-                border: "2px solid #e2001a",
+                border: "2px solid #c0613a",
                 backgroundColor: "transparent",
-                color: "#e2001a",
+                color: "#c0613a",
                 cursor: "pointer",
               }}
             >

@@ -8,7 +8,7 @@ const partnershipTypes = [
     description:
       "Make a direct financial contribution to our programmes. We can work with you to direct your donation to the areas that align with your company's values and CSR priorities.",
     icon: "💰",
-    color: "#e2001a",
+    color: "#c0613a",
   },
   {
     title: "Employee Volunteering",
@@ -36,7 +36,7 @@ const partnershipTypes = [
     description:
       "Adopt the Children's Rights and Business Principles and demonstrate your commitment to respecting and supporting children's rights across your operations and supply chain.",
     icon: "⚖️",
-    color: "#e2001a",
+    color: "#c0613a",
   },
   {
     title: "Event Sponsorship",
@@ -83,10 +83,7 @@ export default function IfYouAreACompanyPage() {
             }}
           >
             <div>
-              <h2
-                className="section-heading"
-                style={{ marginBottom: "24px" }}
-              >
+              <h2 className="section-heading" style={{ marginBottom: "24px" }}>
                 WHY PARTNER WITH US?
               </h2>
               <p
@@ -98,8 +95,8 @@ export default function IfYouAreACompanyPage() {
                   marginBottom: "20px",
                 }}
               >
-                A partnership with FOLMADI Nigeria is more than a CSR
-                commitment — it&apos;s an investment in the future of Nigeria. When
+                A partnership with FOLMADI Nigeria is more than a CSR commitment
+                — it&apos;s an investment in the future of Nigeria. When
                 children thrive, communities prosper, and businesses benefit
                 from a more stable, educated, and healthy workforce.
               </p>
@@ -112,10 +109,10 @@ export default function IfYouAreACompanyPage() {
                   marginBottom: "20px",
                 }}
               >
-                We offer flexible partnership models tailored to your company&apos;s
-                goals, values, and budget. Our team will work with you to
-                design a partnership that delivers real impact and meaningful
-                returns for your business.
+                We offer flexible partnership models tailored to your
+                company&apos;s goals, values, and budget. Our team will work
+                with you to design a partnership that delivers real impact and
+                meaningful returns for your business.
               </p>
               <Link
                 href="/about-us/contact-us"

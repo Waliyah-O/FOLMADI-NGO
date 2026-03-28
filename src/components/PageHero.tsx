@@ -8,7 +8,7 @@ interface PageHeroProps {
 export default function PageHero({
   title,
   subtitle,
-  bgColor = "#e2001a",
+  bgColor = "#c0613a",
   textColor = "#fff",
 }: PageHeroProps) {
   return (
@@ -28,6 +28,7 @@ export default function PageHero({
             textTransform: "uppercase",
             lineHeight: 1.1,
             marginBottom: subtitle ? "16px" : "0",
+            paddingTop: "30px",
           }}
         >
           {title}

@@ -6,13 +6,13 @@ const milestones = [
     year: "1999",
     title: "FOLMADI Founded",
     description:
-      "FOLMADI Nigeria was established with a small team of dedicated advocates committed to improving the lives of children across Nigeria.",
+      "FOLMADI Nigeria was established with a small team of dedicated advocates committed to improving the lives of the citizens of Nigeria.",
   },
   {
     year: "2003",
     title: "First Major Programme Launch",
     description:
-      "Launched our first large-scale child protection programme in Lagos State, reaching over 5,000 children in vulnerable communities.",
+      "Launched our first large-scale child protection programme in Lagos State, reaching over 5,000 people in vulnerable communities.",
   },
   {
     year: "2007",
@@ -30,7 +30,7 @@ const milestones = [
     year: "2014",
     title: "Emergency Response Capacity",
     description:
-      "Built a dedicated emergency response team to support children affected by conflict and natural disasters in the North-East region.",
+      "Built a dedicated emergency response team to support individuals affected by conflict and natural disasters in the North-East region.",
   },
   {
     year: "2018",
@@ -42,20 +42,20 @@ const milestones = [
     year: "2022",
     title: "25 Years of Impact",
     description:
-      "Celebrated 25 years of impact, having reached over 2 million children across Nigeria with life-changing programmes.",
+      "Celebrated 25 years of impact, having reached over 2 million individuals across Nigeria with life-changing programmes.",
   },
   {
     year: "2025",
     title: "Digital Transformation",
     description:
-      "Embraced digital tools and data-driven approaches to scale our programmes and improve outcomes for children across all 36 states.",
+      "Embraced digital tools and data-driven approaches to scale our programmes and improve outcomes for the less priviledged across all 36 states.",
   },
 ];
 
 export const metadata = {
   title: "Our History | FOLMADI Nigeria",
   description:
-    "Discover the history of FOLMADI Nigeria — from our founding in 1999 to our work today reaching millions of children.",
+    "Discover the history of FOLMADI Nigeria — from our founding in 1999 to our work today reaching millions of people.",
 };
 
 export default function OurHistoryPage() {
@@ -63,7 +63,7 @@ export default function OurHistoryPage() {
     <PageLayout>
       <PageHero
         title="Our History"
-        subtitle="From humble beginnings to a nationwide movement — discover how FOLMADI has grown over the decades to become a leading voice for children's rights in Nigeria."
+        subtitle="From humble beginnings to a nationwide movement — discover how FOLMADI has grown over the decades to become a leading voice for the people's rights in Nigeria."
         bgColor="#c0613a"
       />
 

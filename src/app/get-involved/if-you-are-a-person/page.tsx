@@ -10,7 +10,7 @@ const options = [
     href: "/donate",
     cta: "DONATE NOW",
     icon: "💝",
-    color: "#e2001a",
+    color: "#c0613a",
     details: [
       "One-time donations from any amount",
       "Monthly giving for sustained impact",
@@ -76,18 +76,21 @@ export default function IfYouAreAPersonPage() {
     <PageLayout>
       <PageHero
         title="If You Are a Person"
-        subtitle="You don't need to be a superhero to change a child's life. Here are the many ways you can make a difference."
+        subtitle="You don't need to be a superhero to change a life. Here are the many ways you can make a difference."
       />
 
       <section style={{ padding: "60px 0", backgroundColor: "#fff" }}>
         <div className="container">
-          <div style={{ display: "flex", flexDirection: "column", gap: "48px" }}>
+          <div
+            style={{ display: "flex", flexDirection: "column", gap: "48px" }}
+          >
             {options.map((option, index) => (
               <div
                 key={option.title}
                 style={{
                   display: "grid",
-                  gridTemplateColumns: index % 2 === 0 ? "auto 1fr" : "1fr auto",
+                  gridTemplateColumns:
+                    index % 2 === 0 ? "auto 1fr" : "1fr auto",
                   gap: "0",
                   border: "1px solid #e0e0e0",
                   overflow: "hidden",
@@ -138,7 +141,13 @@ export default function IfYouAreAPersonPage() {
                   >
                     {option.description}
                   </p>
-                  <ul style={{ listStyle: "none", padding: 0, marginBottom: "24px" }}>
+                  <ul
+                    style={{
+                      listStyle: "none",
+                      padding: 0,
+                      marginBottom: "24px",
+                    }}
+                  >
                     {option.details.map((detail) => (
                       <li
                         key={detail}

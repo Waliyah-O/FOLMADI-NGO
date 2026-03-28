@@ -4,10 +4,10 @@ import PageHero from "@/components/PageHero";
 const successes = [
   {
     stat: "2M+",
-    label: "Children Reached",
+    label: "Individuals Reached",
     description:
-      "Over 2 million children across Nigeria have benefited from our programmes in education, health, and child protection.",
-    color: "#e2001a",
+      "Over 2 million individuals across Nigeria have benefited from our programmes in education, health, and child protection.",
+    color: "#c0613a",
   },
   {
     stat: "36",
@@ -70,7 +70,7 @@ export default function OurSuccessesPage() {
     <PageLayout>
       <PageHero
         title="Our Successes"
-        subtitle="Every number represents a child whose life has been changed. Here are some of the milestones we are proud to have achieved."
+        subtitle="Every number represents an individual whose life has been changed. Here are some of the milestones we are proud to have achieved."
       />
 
       {/* Stats */}
@@ -89,9 +89,7 @@ export default function OurSuccessesPage() {
                 style={{
                   padding: "40px 32px",
                   borderRight:
-                    index < successes.length - 1
-                      ? "1px solid #e0e0e0"
-                      : "none",
+                    index < successes.length - 1 ? "1px solid #e0e0e0" : "none",
                   textAlign: "center",
                 }}
               >
@@ -158,7 +156,7 @@ export default function OurSuccessesPage() {
                 style={{
                   backgroundColor: "#fff",
                   padding: "32px",
-                  borderTop: "4px solid #e2001a",
+                  borderTop: "4px solid #c0613a",
                 }}
               >
                 <span
@@ -166,7 +164,7 @@ export default function OurSuccessesPage() {
                     fontFamily: "var(--font-oswald)",
                     fontSize: "0.8rem",
                     fontWeight: 600,
-                    color: "#e2001a",
+                    color: "#c0613a",
                     textTransform: "uppercase",
                     letterSpacing: "0.1em",
                     display: "block",

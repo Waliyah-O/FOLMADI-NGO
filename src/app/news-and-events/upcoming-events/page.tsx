@@ -11,7 +11,7 @@ const upcomingEvents = [
     description:
       "Join us for our annual gala dinner — an evening of celebration, inspiration, and fundraising for children across Nigeria. Featuring keynote speakers, live entertainment, and a charity auction.",
     cta: "BUY TICKETS",
-    color: "#e2001a",
+    color: "#c0613a",
     featured: true,
   },
   {
@@ -59,7 +59,7 @@ const upcomingEvents = [
     description:
       "Join us online for the launch of our 2025 Annual Report. Hear from our leadership team about our impact, challenges, and plans for the year ahead.",
     cta: "REGISTER FREE",
-    color: "#e2001a",
+    color: "#c0613a",
     featured: false,
   },
 ];
@@ -110,7 +110,7 @@ export default function UpcomingEventsPage() {
                 key={event.title}
                 style={{
                   backgroundColor: "#fff5f5",
-                  border: "2px solid #e2001a",
+                  border: "2px solid #c0613a",
                   padding: "48px",
                   marginBottom: "48px",
                   display: "grid",
@@ -125,7 +125,7 @@ export default function UpcomingEventsPage() {
                       fontFamily: "var(--font-oswald)",
                       fontSize: "0.75rem",
                       color: "#fff",
-                      backgroundColor: "#e2001a",
+                      backgroundColor: "#c0613a",
                       padding: "4px 12px",
                       textTransform: "uppercase",
                       letterSpacing: "0.1em",
@@ -188,7 +188,7 @@ export default function UpcomingEventsPage() {
                   </div>
                   <button
                     style={{
-                      backgroundColor: "#e2001a",
+                      backgroundColor: "#c0613a",
                       color: "#fff",
                       fontFamily: "var(--font-oswald)",
                       fontWeight: 700,
@@ -207,13 +207,12 @@ export default function UpcomingEventsPage() {
             ))}
 
           {/* Other events */}
-          <h2
-            className="section-heading"
-            style={{ marginBottom: "32px" }}
-          >
+          <h2 className="section-heading" style={{ marginBottom: "32px" }}>
             ALL UPCOMING EVENTS
           </h2>
-          <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+          <div
+            style={{ display: "flex", flexDirection: "column", gap: "16px" }}
+          >
             {upcomingEvents
               .filter((e) => !e.featured)
               .map((event) => (
@@ -341,10 +340,7 @@ export default function UpcomingEventsPage() {
 
           {/* Past events */}
           <div style={{ marginTop: "60px" }}>
-            <h2
-              className="section-heading"
-              style={{ marginBottom: "24px" }}
-            >
+            <h2 className="section-heading" style={{ marginBottom: "24px" }}>
               PAST EVENTS
             </h2>
             <div

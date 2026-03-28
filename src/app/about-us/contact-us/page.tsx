@@ -82,10 +82,7 @@ export default function ContactUsPage() {
           >
             {/* Contact form */}
             <div>
-              <h2
-                className="section-heading"
-                style={{ marginBottom: "32px" }}
-              >
+              <h2 className="section-heading" style={{ marginBottom: "32px" }}>
                 SEND US A MESSAGE
               </h2>
 
@@ -188,7 +185,7 @@ export default function ContactUsPage() {
                   <button
                     type="submit"
                     style={{
-                      backgroundColor: "#e2001a",
+                      backgroundColor: "#c0613a",
                       color: "#fff",
                       fontFamily: "var(--font-oswald)",
                       fontWeight: 600,
@@ -208,10 +205,7 @@ export default function ContactUsPage() {
 
             {/* Office info */}
             <div>
-              <h2
-                className="section-heading"
-                style={{ marginBottom: "32px" }}
-              >
+              <h2 className="section-heading" style={{ marginBottom: "32px" }}>
                 OUR OFFICES
               </h2>
               {offices.map((office) => (
@@ -229,7 +223,7 @@ export default function ContactUsPage() {
                       fontSize: "1.1rem",
                       fontWeight: 600,
                       textTransform: "uppercase",
-                      color: "#e2001a",
+                      color: "#c0613a",
                       marginBottom: "12px",
                     }}
                   >
@@ -269,7 +263,7 @@ export default function ContactUsPage() {
               <div
                 style={{
                   backgroundColor: "#fff5f5",
-                  border: "1px solid #e2001a",
+                  border: "1px solid #c0613a",
                   padding: "20px",
                 }}
               >
@@ -279,7 +273,7 @@ export default function ContactUsPage() {
                     fontSize: "0.95rem",
                     fontWeight: 600,
                     textTransform: "uppercase",
-                    color: "#e2001a",
+                    color: "#c0613a",
                     marginBottom: "8px",
                   }}
                 >

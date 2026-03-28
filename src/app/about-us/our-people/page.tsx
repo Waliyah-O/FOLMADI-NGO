@@ -7,7 +7,7 @@ const leadership = [
     role: "Country Director",
     bio: "Dr. Okafor brings over 20 years of experience in international development and child rights advocacy. She holds a PhD in Development Studies from the University of Lagos.",
     initials: "AO",
-    color: "#e2001a",
+    color: "#c0613a",
   },
   {
     name: "Mr. Chukwuemeka Adeyemi",
@@ -35,7 +35,7 @@ const leadership = [
     role: "Head of Child Protection",
     bio: "Dr. Nwosu is a social work specialist with deep expertise in child safeguarding, trauma-informed care, and community-based protection systems.",
     initials: "NN",
-    color: "#e2001a",
+    color: "#c0613a",
   },
   {
     name: "Ms. Hauwa Musa",
@@ -181,7 +181,7 @@ export default function OurPeoplePage() {
                   backgroundColor: "#fff",
                   padding: "24px",
                   textAlign: "center",
-                  borderBottom: "3px solid #e2001a",
+                  borderBottom: "3px solid #c0613a",
                 }}
               >
                 <div
@@ -189,7 +189,7 @@ export default function OurPeoplePage() {
                     width: "56px",
                     height: "56px",
                     borderRadius: "50%",
-                    backgroundColor: "#e2001a",
+                    backgroundColor: "#c0613a",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
@@ -237,7 +237,7 @@ export default function OurPeoplePage() {
       <section
         style={{
           padding: "60px 0",
-          backgroundColor: "#e2001a",
+          backgroundColor: "#c0613a",
           textAlign: "center",
         }}
       >
@@ -273,7 +273,7 @@ export default function OurPeoplePage() {
             href="/get-involved/if-you-are-a-person"
             style={{
               backgroundColor: "#fff",
-              color: "#e2001a",
+              color: "#c0613a",
               fontFamily: "var(--font-oswald)",
               fontWeight: 700,
               textTransform: "uppercase",

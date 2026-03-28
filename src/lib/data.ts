@@ -11,7 +11,7 @@ export const NAV_ITEMS = [
     href: "/about-us",
     children: [
       { label: "OUR HISTORY", href: "/about-us/our-history" },
-      { label: "OUR SUCCESSES", href: "/about-us/our-successes" },
+      // { label: "OUR SUCCESSES", href: "/about-us/our-successes" },
       { label: "OUR PEOPLE", href: "/about-us/our-people" },
       { label: "ACCOUNTABILITY", href: "/about-us/accountability" },
       { label: "CONTACT US", href: "/about-us/contact-us" },
@@ -24,7 +24,7 @@ export const NAV_ITEMS = [
       { label: "OUR WORK IN NIGERIA", href: "/what-we-do/our-work" },
       { label: "IN TIMES OF CRISIS", href: "/what-we-do/in-times-of-crisis" },
       {
-        label: "HELP US CHANGE THE LIVES OF CHILDREN",
+        label: "HELP US CHANGE LIVES",
         href: "/what-we-do/help-us-change-the-lives-of-children",
       },
     ],

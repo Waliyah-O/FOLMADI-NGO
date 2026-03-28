@@ -13,7 +13,7 @@ const workAreas = [
       "Train 2,000 social workers and community volunteers in child safeguarding",
       "Support 10,000 survivors of violence with psychosocial services",
     ],
-    color: "#e2001a",
+    color: "#c0613a",
     icon: "🛡️",
     href: "/what-we-do/our-work/child-protection",
   },
@@ -77,7 +77,9 @@ export default function OurWorkPage() {
 
       <section style={{ padding: "60px 0", backgroundColor: "#fff" }}>
         <div className="container">
-          <div style={{ display: "flex", flexDirection: "column", gap: "48px" }}>
+          <div
+            style={{ display: "flex", flexDirection: "column", gap: "48px" }}
+          >
             {workAreas.map((area) => (
               <div
                 key={area.title}

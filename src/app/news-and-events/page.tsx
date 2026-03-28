@@ -9,7 +9,7 @@ const sections = [
       "Stay up to date with the latest news from FOLMADI Nigeria — programme updates, advocacy wins, and stories from the field.",
     href: "/news-and-events/news",
     icon: "📰",
-    color: "#e2001a",
+    color: "#c0613a",
   },
   {
     title: "Blogs",
@@ -47,7 +47,8 @@ const featuredNews = [
     href: "/news-and-events/news",
   },
   {
-    title: "World Children's Day: FOLMADI Calls for Greater Investment in Education",
+    title:
+      "World Children's Day: FOLMADI Calls for Greater Investment in Education",
     date: "November 20, 2025",
     category: "News",
     excerpt:
@@ -81,10 +82,7 @@ export default function NewsAndEventsPage() {
       {/* Featured news */}
       <section style={{ padding: "60px 0", backgroundColor: "#fff" }}>
         <div className="container">
-          <h2
-            className="section-heading"
-            style={{ marginBottom: "32px" }}
-          >
+          <h2 className="section-heading" style={{ marginBottom: "32px" }}>
             LATEST STORIES
           </h2>
           <div
@@ -98,7 +96,7 @@ export default function NewsAndEventsPage() {
             <div
               style={{
                 backgroundColor: "#f9f9f9",
-                borderTop: "4px solid #e2001a",
+                borderTop: "4px solid #c0613a",
                 padding: "40px",
               }}
             >
@@ -106,7 +104,7 @@ export default function NewsAndEventsPage() {
                 style={{
                   fontFamily: "var(--font-oswald)",
                   fontSize: "0.75rem",
-                  color: "#e2001a",
+                  color: "#c0613a",
                   textTransform: "uppercase",
                   letterSpacing: "0.1em",
                   display: "block",
@@ -146,7 +144,7 @@ export default function NewsAndEventsPage() {
                   fontSize: "0.85rem",
                   fontWeight: 600,
                   textTransform: "uppercase",
-                  color: "#e2001a",
+                  color: "#c0613a",
                   letterSpacing: "0.05em",
                 }}
               >
@@ -155,14 +153,16 @@ export default function NewsAndEventsPage() {
             </div>
 
             {/* Side stories */}
-            <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+            <div
+              style={{ display: "flex", flexDirection: "column", gap: "16px" }}
+            >
               {featuredNews.slice(1).map((item) => (
                 <div
                   key={item.title}
                   style={{
                     backgroundColor: "#f9f9f9",
                     padding: "24px",
-                    borderLeft: "4px solid #e2001a",
+                    borderLeft: "4px solid #c0613a",
                     flex: 1,
                   }}
                 >
@@ -170,7 +170,7 @@ export default function NewsAndEventsPage() {
                     style={{
                       fontFamily: "var(--font-oswald)",
                       fontSize: "0.7rem",
-                      color: "#e2001a",
+                      color: "#c0613a",
                       textTransform: "uppercase",
                       letterSpacing: "0.1em",
                       display: "block",
@@ -199,7 +199,7 @@ export default function NewsAndEventsPage() {
                       fontSize: "0.8rem",
                       fontWeight: 600,
                       textTransform: "uppercase",
-                      color: "#e2001a",
+                      color: "#c0613a",
                       letterSpacing: "0.05em",
                     }}
                   >

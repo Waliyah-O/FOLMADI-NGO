@@ -65,7 +65,7 @@ export default function DonatePage() {
       {/* Hero */}
       <section
         style={{
-          backgroundColor: "#e2001a",
+          backgroundColor: "#c0613a",
           padding: "60px 0 50px",
         }}
       >
@@ -145,9 +145,9 @@ export default function DonatePage() {
                             letterSpacing: "0.05em",
                             border: "2px solid",
                             borderColor:
-                              frequency === freq ? "#e2001a" : "#ddd",
+                              frequency === freq ? "#c0613a" : "#ddd",
                             backgroundColor:
-                              frequency === freq ? "#e2001a" : "#fff",
+                              frequency === freq ? "#c0613a" : "#fff",
                             color: frequency === freq ? "#fff" : "#666",
                             cursor: "pointer",
                           }}
@@ -165,8 +165,8 @@ export default function DonatePage() {
                           marginTop: "8px",
                         }}
                       >
-                        ✓ Monthly donors provide sustained support that helps
-                        us plan long-term programmes
+                        ✓ Monthly donors provide sustained support that helps us
+                        plan long-term programmes
                       </p>
                     )}
                   </div>
@@ -197,11 +197,11 @@ export default function DonatePage() {
                             border: "2px solid",
                             borderColor:
                               selectedAmount === amount && !customAmount
-                                ? "#e2001a"
+                                ? "#c0613a"
                                 : "#ddd",
                             backgroundColor:
                               selectedAmount === amount && !customAmount
-                                ? "#e2001a"
+                                ? "#c0613a"
                                 : "#fff",
                             color:
                               selectedAmount === amount && !customAmount
@@ -242,7 +242,7 @@ export default function DonatePage() {
                           ...inputStyle,
                           paddingLeft: "36px",
                           border: customAmount
-                            ? "2px solid #e2001a"
+                            ? "2px solid #c0613a"
                             : "1px solid #ddd",
                         }}
                       />
@@ -254,7 +254,7 @@ export default function DonatePage() {
                     <div
                       style={{
                         backgroundColor: "#fff5f5",
-                        border: "1px solid #e2001a",
+                        border: "1px solid #c0613a",
                         padding: "16px 20px",
                         marginBottom: "32px",
                         display: "flex",
@@ -285,8 +285,7 @@ export default function DonatePage() {
                     disabled={effectiveAmount <= 0}
                     style={{
                       width: "100%",
-                      backgroundColor:
-                        effectiveAmount > 0 ? "#e2001a" : "#ccc",
+                      backgroundColor: effectiveAmount > 0 ? "#c0613a" : "#ccc",
                       color: "#fff",
                       fontFamily: "var(--font-oswald)",
                       fontWeight: 700,
@@ -327,7 +326,7 @@ export default function DonatePage() {
                       style={{
                         fontFamily: "var(--font-oswald)",
                         fontSize: "0.8rem",
-                        color: "#e2001a",
+                        color: "#c0613a",
                         background: "none",
                         border: "none",
                         cursor: "pointer",
@@ -342,7 +341,7 @@ export default function DonatePage() {
                   {/* Summary */}
                   <div
                     style={{
-                      backgroundColor: "#e2001a",
+                      backgroundColor: "#c0613a",
                       padding: "16px 20px",
                       marginBottom: "32px",
                       display: "flex",
@@ -358,7 +357,9 @@ export default function DonatePage() {
                         opacity: 0.9,
                       }}
                     >
-                      {frequency === "monthly" ? "Monthly donation" : "One-time donation"}
+                      {frequency === "monthly"
+                        ? "Monthly donation"
+                        : "One-time donation"}
                     </span>
                     <span
                       style={{
@@ -477,7 +478,7 @@ export default function DonatePage() {
                   <button
                     style={{
                       width: "100%",
-                      backgroundColor: "#e2001a",
+                      backgroundColor: "#c0613a",
                       color: "#fff",
                       fontFamily: "var(--font-oswald)",
                       fontWeight: 700,
@@ -511,13 +512,15 @@ export default function DonatePage() {
             </div>
 
             {/* Sidebar */}
-            <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
+            <div
+              style={{ display: "flex", flexDirection: "column", gap: "24px" }}
+            >
               {/* Trust signals */}
               <div
                 style={{
                   backgroundColor: "#fff",
                   padding: "32px",
-                  borderTop: "4px solid #e2001a",
+                  borderTop: "4px solid #c0613a",
                 }}
               >
                 <h3
@@ -618,8 +621,8 @@ export default function DonatePage() {
                     lineHeight: 1.6,
                   }}
                 >
-                  <strong>Cheque:</strong> Make payable to &ldquo;FOLMADI Nigeria&rdquo; and
-                  post to our Abuja office.
+                  <strong>Cheque:</strong> Make payable to &ldquo;FOLMADI
+                  Nigeria&rdquo; and post to our Abuja office.
                 </p>
               </div>
 
@@ -641,12 +644,11 @@ export default function DonatePage() {
                   Questions about donating?{" "}
                   <a
                     href="/about-us/contact-us"
-                    style={{ color: "#e2001a", fontWeight: 600 }}
+                    style={{ color: "#c0613a", fontWeight: 600 }}
                   >
                     Contact our fundraising team
                   </a>{" "}
-                  or call{" "}
-                  <strong>+234 (0) 9 123 4567</strong>.
+                  or call <strong>+234 (0) 9 123 4567</strong>.
                 </p>
               </div>
             </div>

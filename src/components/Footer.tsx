@@ -7,7 +7,7 @@ const footerLinks = [
     heading: "About Us",
     links: [
       { label: "Our History", href: "/about-us/our-history" },
-      { label: "Our Successes", href: "/about-us/our-successes" },
+      // { label: "Our Successes", href: "/about-us/our-successes" },
       { label: "Our People", href: "/about-us/our-people" },
       { label: "Accountability", href: "/about-us/accountability" },
       { label: "Contact Us", href: "/about-us/contact-us" },
